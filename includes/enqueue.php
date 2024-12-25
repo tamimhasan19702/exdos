@@ -1,5 +1,6 @@
 <?php 
 
+if( ! function_exists( 'exdos_scripts' ) ) :
 function exdos_scripts() {
 
    
@@ -28,3 +29,5 @@ function exdos_scripts() {
         wp_enqueue_script( 'comment-reply' );
     }
 }
+
+endif;

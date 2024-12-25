@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo get_bloginfo( 'language' ); ?>">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <?php wp_head(); ?>
 
 </head>
+
 <body>
-    
+
     <!-- scroll to top  -->
     <button id="back-to-top"><i class="far fa-arrow-up"></i></button>
 
@@ -32,7 +34,9 @@
                 <div class="row gx-0 align-items-center">
                     <div class="col-xl-2 col-lg-5 col-md-4 col-6">
                         <div class="tp-logo">
-                            <a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo/logo-white.png" alt=""></a>
+                            <a href="index.html"><img
+                                    src="<?php echo get_template_directory_uri(); ?>/assets/img/logo/logo-white.png"
+                                    alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-10 col-lg-7 col-md-8 col-6">
@@ -47,7 +51,8 @@
                                                         <div class="col mb-25">
                                                             <a href="index.html">
                                                                 <div class="tp-home-thumb">
-                                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/demo/home-1.jpg" alt="">
+                                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/demo/home-1.jpg"
+                                                                        alt="">
                                                                     <h3 class="tp-home-title">Home 01</h3>
                                                                 </div>
                                                             </a>
@@ -55,7 +60,8 @@
                                                         <div class="col mb-25">
                                                             <a href="index-2.html">
                                                                 <div class="tp-home-thumb">
-                                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/demo/home-2.jpg" alt="">
+                                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/demo/home-2.jpg"
+                                                                        alt="">
                                                                     <h3 class="tp-home-title">Home 02</h3>
                                                                 </div>
                                                             </a>
@@ -63,7 +69,8 @@
                                                         <div class="col mb-25">
                                                             <a href="index-3.html">
                                                                 <div class="tp-home-thumb">
-                                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/demo/home-3.jpg" alt="">
+                                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/demo/home-3.jpg"
+                                                                        alt="">
                                                                     <h3 class="tp-home-title">Home 03</h3>
                                                                 </div>
                                                             </a>
@@ -71,7 +78,8 @@
                                                         <div class="col mb-25">
                                                             <a href="index-4.html">
                                                                 <div class="tp-home-thumb">
-                                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/demo/home-4.jpg" alt="">
+                                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/demo/home-4.jpg"
+                                                                        alt="">
                                                                     <h3 class="tp-home-title">Home 04</h3>
                                                                 </div>
                                                             </a>
@@ -79,7 +87,8 @@
                                                         <div class="col mb-25">
                                                             <a href="index-5.html">
                                                                 <div class="tp-home-thumb">
-                                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/demo/home-5.jpg" alt="">
+                                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/demo/home-5.jpg"
+                                                                        alt="">
                                                                     <h3 class="tp-home-title">Home 05</h3>
                                                                 </div>
                                                             </a>
@@ -125,7 +134,8 @@
                             </div>
                             <div class="tp-header-right d-flex justify-content-end flex-wrap align-items-center">
                                 <div class="tp-header-search d-none d-md-flex">
-                                    <button class="d-flex align-items-center tp-search-toggle"><i class="flaticon-search"></i></button>
+                                    <button class="d-flex align-items-center tp-search-toggle"><i
+                                            class="flaticon-search"></i></button>
                                 </div>
                                 <div class="tp-header-cta d-none d-md-flex">
                                     <div class="tp-header-cta-icon d-flex align-items-center">
@@ -172,7 +182,8 @@
         <div class="tp-offcanvas-wrapper">
             <div class="tp-offcanvas-header d-flex justify-content-between align-items-center mb-90">
                 <div class="tp-offcanvas-logo">
-                    <a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo/logo-black.png" alt=""></a>
+                    <a href="index.html"><img
+                            src="<?php echo get_template_directory_uri(); ?>/assets/img/logo/logo-black.png" alt=""></a>
                 </div>
                 <div class="tp-offcanvas-close">
                     <button class="tp-offcanvas-close-toggle"><i class="fal fa-times"></i></button>
@@ -186,10 +197,22 @@
                 <p>Lorem ipsum dolor sit amet, consect etur adipiscing elit. </p>
             </div>
             <div class="tp-offcanvas-gallery mb-50">
-                <a class="popup-image" href="<?php echo get_template_directory_uri(); ?>/assets/img/project/showcase-thumb-01.jpg"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/project/showcase-thumb-01.jpg" alt=""></a>
-                <a class="popup-image" href="<?php echo get_template_directory_uri(); ?>/assets/img/project/showcase-thumb-02.jpg"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/project/showcase-thumb-02.jpg" alt=""></a>
-                <a class="popup-image" href="<?php echo get_template_directory_uri(); ?>/assets/img/project/showcase-thumb-03.jpg"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/project/showcase-thumb-03.jpg" alt=""></a>
-                <a class="popup-image" href="<?php echo get_template_directory_uri(); ?>/assets/img/project/showcase-thumb-04.jpg"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/project/showcase-thumb-04.jpg" alt=""></a>
+                <a class="popup-image"
+                    href="<?php echo get_template_directory_uri(); ?>/assets/img/project/showcase-thumb-01.jpg"><img
+                        src="<?php echo get_template_directory_uri(); ?>/assets/img/project/showcase-thumb-01.jpg"
+                        alt=""></a>
+                <a class="popup-image"
+                    href="<?php echo get_template_directory_uri(); ?>/assets/img/project/showcase-thumb-02.jpg"><img
+                        src="<?php echo get_template_directory_uri(); ?>/assets/img/project/showcase-thumb-02.jpg"
+                        alt=""></a>
+                <a class="popup-image"
+                    href="<?php echo get_template_directory_uri(); ?>/assets/img/project/showcase-thumb-03.jpg"><img
+                        src="<?php echo get_template_directory_uri(); ?>/assets/img/project/showcase-thumb-03.jpg"
+                        alt=""></a>
+                <a class="popup-image"
+                    href="<?php echo get_template_directory_uri(); ?>/assets/img/project/showcase-thumb-04.jpg"><img
+                        src="<?php echo get_template_directory_uri(); ?>/assets/img/project/showcase-thumb-04.jpg"
+                        alt=""></a>
             </div>
             <div class="tp-offcanvas-info mb-50">
                 <h3 class="tp-offcanvas-sm-title">Information</h3>
@@ -209,20 +232,25 @@
     <div class="tp-offcanvas-overlay"></div>
 
 
-    <section class="tp-breadcrumb-area tp-breadcrumb-space p-relative" data-background="<?php echo get_template_directory_uri(); ?>/assets/img/breadcrumb/breadcrumb-pattern.png" data-bg-color="#0A0E1A">
-            <div class="tp-breadcrumb-shape">
-                <img class="tp-breadcrumb-shape-1 p-absolute" src="<?php echo get_template_directory_uri(); ?>/assets/img/breadcrumb/shape-1.png" alt="">
-                <img class="tp-breadcrumb-shape-2 p-absolute" src="<?php echo get_template_directory_uri(); ?>/assets/img/breadcrumb/shape-2.png" alt="">
-                <img class="tp-breadcrumb-shape-3 p-absolute" src="<?php echo get_template_directory_uri(); ?>/assets/img/breadcrumb/shape-3.png" alt="">
-            </div>
-            <div class="container">
-                <div class="tp-breadcrumb text-center position-relative z-index-2">
-                    <h1 class="tp-breadcrumb-title tp-upper tp-text-white">Blog</h1>
-                    <div class="tp-breadcrumb-list">
-                        <span class="active"><a href="#">Home</a></span>
-                        <span class="dvir">-</span>
-                        <span><a href="#">blog</a></span>
-                    </div>
+    <section class="tp-breadcrumb-area tp-breadcrumb-space p-relative"
+        data-background="<?php echo get_template_directory_uri(); ?>/assets/img/breadcrumb/breadcrumb-pattern.png"
+        data-bg-color="#0A0E1A">
+        <div class="tp-breadcrumb-shape">
+            <img class="tp-breadcrumb-shape-1 p-absolute"
+                src="<?php echo get_template_directory_uri(); ?>/assets/img/breadcrumb/shape-1.png" alt="">
+            <img class="tp-breadcrumb-shape-2 p-absolute"
+                src="<?php echo get_template_directory_uri(); ?>/assets/img/breadcrumb/shape-2.png" alt="">
+            <img class="tp-breadcrumb-shape-3 p-absolute"
+                src="<?php echo get_template_directory_uri(); ?>/assets/img/breadcrumb/shape-3.png" alt="">
+        </div>
+        <div class="container">
+            <div class="tp-breadcrumb text-center position-relative z-index-2">
+                <h1 class="tp-breadcrumb-title tp-upper tp-text-white">Blog</h1>
+                <div class="tp-breadcrumb-list">
+                    <span class="active"><a href="#">Home</a></span>
+                    <span class="dvir">-</span>
+                    <span><a href="#">blog</a></span>
                 </div>
             </div>
+        </div>
     </section>
