@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Outputs the HTML structure for a preloader animation.
+ * 
+ * This function generates the necessary HTML markup for a preloader, which is 
+ * typically displayed on a webpage while content is being loaded. The preloader 
+ * consists of a loading container with four rotating objects, styled using CSS.
+ */
+
 function exdos_preloader()
 {
     ?>
