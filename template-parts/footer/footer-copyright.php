@@ -1,19 +1,29 @@
+<?php
+$copyright = get_theme_mod('exdos_footer_copyright_text', 'Copyright 2024 | Alright reserved exdos ');
+$copyright_company = get_theme_mod('exdos_footer_copyright_company', 'ThemePure');
+$copyright_link = get_theme_mod('exdos_footer_copyright_company_url', '#');
+?>
+
 <div class="tp-footer-copyright-area pt-40 pb-10 p-relative z-index-1">
     <div class="row align-items-center">
         <div class="col-xl-3 col-lg-4">
             <div class="tp-footer-copyright mb-30 text-md-center text-lg-start">
-                <p>© Copyright 2024 | Alright reserved
-                    exdos by <a href="#">ThemePure</a></p>
+                <p><?php echo esc_html($copyright); ?>
+
+                    <?php if (!empty($copyright_link) && !empty($copyright_company)): ?>
+                    by <a href="<?php echo esc_url($copyright_link); ?>"><?php echo esc_html($copyright_company); ?></a>
+                    <?php endif; ?>
+
+                </p>
             </div>
         </div>
         <div class="col-xl-9 col-lg-8">
             <div class="tp-footer-menu text-md-center text-lg-end mb-30 ">
-                <ul>
-                    <li><a href="#">Career</a></li>
-                    <li><a href="faq.html">our FAq </a></li>
-                    <li><a href="#">privacy & policy</a></li>
-                    <li><a href="contact.html">contact</a></li>
-                </ul>
+                <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'Exdos Bottom Menu',
+                ));
+                ?>
             </div>
         </div>
     </div>
