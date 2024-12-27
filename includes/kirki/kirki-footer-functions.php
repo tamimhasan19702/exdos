@@ -7,7 +7,7 @@ function exdos_footer_section()
         new \Kirki\Section(
             'exdos_footer_section',
             [
-                'title' => esc_html__('Exdos Footer Logo and Contact Information', 'kirki'),
+                'title' => esc_html__('Exdos Footer Logo and Social Media', 'kirki'),
                 'description' => esc_html__('Exdos Footer Section Description', 'kirki'),
                 'panel' => 'exdos_kirki_panel',
                 'priority' => 160,
@@ -26,41 +26,49 @@ function exdos_footer_section()
                 ]
             );
 
-            new \Kirki\Field\Text(
+            new \Kirki\Field\URL(
                 [
-                    'settings' => 'exdos_footer_phone_number_text',
-                    'label' => esc_html__('Phone Number Text', 'kirki'),
+                    'settings' => 'exdos_footer_facebook',
+                    'label' => esc_html__('Facebook URL', 'kirki'),
                     'section' => 'exdos_footer_section',
-                    'default' => esc_html__('Contact Us', 'kirki'),
+                    'default' => 'https://www.facebook.com/',
+                    'priority' => 10,
                 ]
             );
 
-            new \Kirki\Field\Text(
+            new \Kirki\Field\URL(
                 [
-                    'settings' => 'exdos_footer_phone_number',
-                    'label' => esc_html__('Phone Number', 'kirki'),
+                    'settings' => 'exdos_footer_instagram',
+                    'label' => esc_html__('Instagram URL', 'kirki'),
                     'section' => 'exdos_footer_section',
-                    'default' => '02 (256) 256 025',
+                    'default' => 'https://www.instagram.com/',
+                    'priority' => 10,
                 ]
             );
 
-            new \Kirki\Field\Text(
+            new \Kirki\Field\URL(
                 [
-                    'settings' => 'exdos_footer_email',
-                    'label' => esc_html__('Email Address', 'kirki'),
+                    'settings' => 'exdos_footer_linkedin',
+                    'label' => esc_html__('LinkedIn URL', 'kirki'),
                     'section' => 'exdos_footer_section',
-                    'default' => 'contact@exdos.com',
+                    'default' => 'https://www.linkedin.com/',
+                    'priority' => 10,
                 ]
             );
 
-            new \Kirki\Field\Text(
+            new \Kirki\Field\URL(
                 [
-                    'settings' => 'exdos_footer_address',
-                    'label' => esc_html__('Office Address', 'kirki'),
+                    'settings' => 'exdos_footer_twitter',
+                    'label' => esc_html__('Twitter URL', 'kirki'),
                     'section' => 'exdos_footer_section',
-                    'default' => 'Avenue de Roma 158b, Lisboa',
+                    'default' => 'https://twitter.com/',
+                    'priority' => 10,
                 ]
             );
+
+
         }
     }
 }
+
+exdos_footer_section();

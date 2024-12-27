@@ -71,6 +71,8 @@ if (!function_exists('exdos_setup')):
             'flex-height' => true
         ));
 
+        remove_theme_support('widgets-block-editor');
+
     }
 endif; // exdos_setup
 add_action('after_setup_theme', 'exdos_setup');
