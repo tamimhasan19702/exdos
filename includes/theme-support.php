@@ -73,3 +73,4 @@ if (!function_exists('exdos_setup')):
 
     }
 endif; // exdos_setup
+add_action('after_setup_theme', 'exdos_setup');
