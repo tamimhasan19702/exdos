@@ -22,7 +22,7 @@ function exdos_header_section()
         new \Kirki\Section(
             'exdos_header_section',
             [
-                'title' => esc_html__('Exdos Header Section', 'kirki'),
+                'title' => esc_html__('Exdos Header Logo and Phone Number', 'kirki'),
                 'description' => esc_html__('Exdos Header Section Description', 'kirki'),
                 'panel' => 'exdos_kirki_panel',
                 'priority' => 160,
@@ -277,3 +277,43 @@ function exdos_offcanvas_follow_us_section()
 }
 
 exdos_offcanvas_follow_us_section();
+
+
+function exdos_search_section()
+{
+    if (class_exists('Kirki\Section')) {
+        new \Kirki\Section(
+            'exdos_search_section',
+            [
+                'title' => esc_html__('Exdos Search Section', 'kirki'),
+                'description' => esc_html__('Exdos Search Section Description', 'kirki'),
+                'panel' => 'exdos_kirki_panel',
+                'priority' => 160,
+            ]
+        );
+
+        if (class_exists('Kirki\Field')) {
+            new \Kirki\Field\Text(
+                [
+                    'settings' => 'exdos_search_text',
+                    'label' => esc_html__('Search Text', 'kirki'),
+                    'section' => 'exdos_search_section',
+                    'default' => esc_html__('What are you looking for?', 'kirki'),
+                ]
+            );
+
+            new \Kirki\Field\Text(
+                [
+                    'settings' => 'exdos_search_placeholder',
+                    'label' => esc_html__('Search Placeholder Text', 'kirki'),
+                    'section' => 'exdos_search_section',
+                    'default' => esc_html__('Email here', 'kirki'),
+                ]
+            );
+
+
+        }
+    }
+}
+
+exdos_search_section();
