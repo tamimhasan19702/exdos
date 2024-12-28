@@ -1,26 +1,15 @@
 <?php
 $cat = get_the_category();
 
-$gallery = function_exists('get_field') ? get_field('post_gallery') : null;
+$videoUrl = function_exists('get_field') ? get_field('post_gallery') : null;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class("tp-postbox mb-60 sadadadada"); ?>>
 
-    <div class="tp-postbox-thumb mb-35  position-relative">
-        <div class="swiper tp-blog-active">
-            <div class="swiper-wrapper">
-
-                <?php foreach ($gallery as $image): ?>
-                    <div class="swiper-slide br-20">
-                        <img src="<?php echo esc_url($image['url']); ?>" alt="">
-                    </div>
-                <?php endforeach; ?>
-
-            </div>
-        </div>
-        <div class="tp-blog-slider-arrow">
-            <div class="tp-swiper-blog-button-prev tp-swiper-blog-button"><i class="flaticon-right-arrow"></i></div>
-            <div class="tp-swiper-blog-button-next tp-swiper-blog-button"><i class="flaticon-right-arrow"></i></div>
+    <div class="tp-postbox-thumb mb-35  position-relative br-20">
+        <?php the_post_thumbnail('post-thumbnail', ['alt' => get_the_title()]); ?>
+        <div class="tp-blog-video">
+            <a class="popup-video" href="<?php echo esc_url($videoUrl); ?>"><i class="fal fa-play"></i></a>
         </div>
     </div>
 

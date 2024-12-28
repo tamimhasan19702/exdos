@@ -58,15 +58,7 @@ get_header();
 
 
 
-                    <div class="tp-pagination mb-60">
-                        <ul>
-                            <li><a href="#"><i class="fal fa-long-arrow-left"></i></a></li>
-                            <li><a href="#">01</a></li>
-                            <li><a href="#">02</a></li>
-                            <li><a href="#">03</a></li>
-                            <li><a href="#"><i class="fal fa-long-arrow-right"></i></a></li>
-                        </ul>
-                    </div>
+                    <?php get_template_part('template-parts/blog/pagination') ?>
                 </div>
 
                 <div class="col-xl-4 col-lg-4">
