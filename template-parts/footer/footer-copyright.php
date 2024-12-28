@@ -17,14 +17,18 @@ $copyright_link = get_theme_mod('exdos_footer_copyright_company_url', '#');
                 </p>
             </div>
         </div>
+
+        <?php if (has_nav_menu('Exdos Bottom Menu')): ?>
         <div class="col-xl-9 col-lg-8">
             <div class="tp-footer-menu text-md-center text-lg-end mb-30 ">
                 <?php
-                wp_nav_menu(array(
-                    'theme_location' => 'Exdos Bottom Menu',
-                ));
-                ?>
+                    wp_nav_menu(array(
+                        'theme_location' => 'Exdos Bottom Menu',
+                    ));
+                    ?>
             </div>
         </div>
+        <?php endif; ?>
+
     </div>
 </div>

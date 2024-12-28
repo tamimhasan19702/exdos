@@ -73,6 +73,11 @@ if (!function_exists('exdos_setup')):
 
         remove_theme_support('widgets-block-editor');
 
+
+
     }
 endif; // exdos_setup
 add_action('after_setup_theme', 'exdos_setup');
+
+// Enable Classic Editor by default
+add_filter('use_block_editor_for_post', '__return_false');
