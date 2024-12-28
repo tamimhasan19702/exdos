@@ -38,17 +38,23 @@ get_header();
             <div class="row">
                 <div class="col-xl-8 col-lg-8">
 
-                    <?php if (have_posts()):
-                        while (have_posts()):
-                            the_post();
-
-                            get_template_part('template-parts/content/content', get_post_type());
-
-
-                        endwhile;
-                    else: ?>
-                        <p><?php esc_html_e('No Posts To Display.'); ?></p>
-                    <?php endif; ?>
+                    <?php
+                    $args = array(
+                        'post_type' => 'post',
+                        'post_status' => 'publish',
+                        'posts_per_page' => 3,
+                    );
+                    $the_query = new WP_Query($args);
+                    if ($the_query->have_posts()) {
+                        while ($the_query->have_posts()) {
+                            $the_query->the_post();
+                            get_template_part('template-parts/blog/content', get_post_format());
+                        }
+                        wp_reset_postdata();
+                    } else {
+                        echo '<p>' . esc_html__('No Posts To Display.', 'exdos') . '</p>';
+                    }
+                    ?>
 
 
 
