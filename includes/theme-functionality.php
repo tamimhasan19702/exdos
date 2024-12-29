@@ -55,4 +55,16 @@ if (function_exists('register_sidebar')) {
         'after_title' => '</h3>',
     ));
 
+
+    register_sidebar(array(
+        'name' => __('Blog Sidebar', 'exdos'),
+        'id' => 'blog-sidebar',
+        'description' => __('Widgets in this area will be shown in the blog page', 'exdos'),
+        'before_widget' => '<div class="tp-blog-sidebar-widget mb-30">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="tp-blog-sidebar-title tp-fs-24 mb-25">',
+        'after_title' => '</h3>',
+    ));
+
+
 }

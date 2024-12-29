@@ -1,7 +1,7 @@
 <?php
 $cat = get_the_category();
 
-$videoUrl = function_exists('get_field') ? get_field('post_gallery') : null;
+$videoUrl = function_exists('get_field') ? get_field('post_format_url') : null;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class("tp-postbox mb-60 sadadadada"); ?>>
