@@ -78,3 +78,17 @@ function exdos_search_form( $form ) {
 	return $form;
 }
 add_filter( 'get_search_form', 'exdos_search_form' );
+
+function get_exdos_category() {
+    $categories = get_the_category();
+    if ( ! empty( $categories ) ) {
+        $category = $categories[0];
+        ?>
+<span>
+    <a href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>">
+        <i class="fal fa-certificate"></i> <?php echo esc_html( $category->name ); ?>
+    </a>
+</span>
+<?php
+    }
+}

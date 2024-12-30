@@ -11,9 +11,9 @@ $gallery = function_exists('get_field') ? get_field('post_gallery') : null;
             <div class="swiper-wrapper">
 
                 <?php foreach ($gallery as $image): ?>
-                    <div class="swiper-slide br-20">
-                        <img src="<?php echo esc_url($image['url']); ?>" alt="">
-                    </div>
+                <div class="swiper-slide br-20">
+                    <img src="<?php echo esc_url($image['url']); ?>" alt="">
+                </div>
                 <?php endforeach; ?>
 
             </div>
@@ -31,8 +31,9 @@ $gallery = function_exists('get_field') ? get_field('post_gallery') : null;
             <span><a
                     href="<?php echo esc_url(get_day_link(get_the_time('Y'), get_the_time('m'), get_the_time('d'))); ?>"><i
                         class="fal fa-calendar-alt"></i> <?php echo esc_html(get_the_date('d M. Y')); ?></a></span>
-            <span><a href="<?php echo esc_url(get_category_link($cat[0]->term_id)); ?>"><i
-                        class="fal fa-certificate"></i> <?php echo esc_html($cat[0]->cat_name); ?></a></span>
+
+            <?php get_exdos_category(); ?>
+
         </div>
         <h3 class="tp-postbox-title tp-fs-40 mb-30"><a
                 href="<?php echo esc_url(get_permalink()); ?>"><?php echo esc_html(get_the_title()); ?></a></h3>

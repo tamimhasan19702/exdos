@@ -43,7 +43,7 @@ $check_sidebar = is_active_sidebar('blog-sidebar') ? '' : 'justify-content-cente
                     $args = array(
                         'post_type' => 'post',
                         'post_status' => 'publish',
-                        
+                       
                     );
                     $the_query = new WP_Query($args);
                     if ($the_query->have_posts()) {
