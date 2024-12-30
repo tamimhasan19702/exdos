@@ -60,7 +60,7 @@ if (function_exists('register_sidebar')) {
         'name' => __('Blog Sidebar', 'exdos'),
         'id' => 'blog-sidebar',
         'description' => __('Widgets in this area will be shown in the blog page', 'exdos'),
-        'before_widget' => '<div class="tp-blog-sidebar-widget mb-30">',
+        'before_widget' => '<div id="%1$s" class="tp-blog-sidebar-widget widget-blog-sidebar mb-30 %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="tp-blog-sidebar-title tp-fs-24 mb-25">',
         'after_title' => '</h3>',
