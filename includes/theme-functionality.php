@@ -68,3 +68,13 @@ if (function_exists('register_sidebar')) {
 
 
 }
+
+
+
+
+function exdos_search_form( $form ) {
+	$form = '<form class="tp-blog-form position-relative" action="/" method="get">     <input type="text" name="s" value="' . get_search_query() . '"         placeholder="' . esc_attr__( 'Search Keywords', 'exdos' ) . '">     <button type="submit"><i class="far fa-arrow-right"></i></button> </form>';
+
+	return $form;
+}
+add_filter( 'get_search_form', 'exdos_search_form' );
