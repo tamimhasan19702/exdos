@@ -1,3 +1,4 @@
+/** @format */
 /*-----------------------------------------------------------------------------------
 
     Template Name: Exdos - Creative Agency HTML Template
@@ -126,6 +127,10 @@ a {
   text-decoration: none;
 }
 
+img {
+  height: auto;
+}
+
 h1,
 h2,
 h3,
@@ -249,7 +254,7 @@ textarea {
   font-size: 15px;
   color: var(--tp-common-black);
   border: 0;
-  border-bottom: 1px solid #57595C;
+  border-bottom: 1px solid #57595c;
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -260,7 +265,7 @@ input[type=number]::-webkit-input-placeholder,
 input[type=password]::-webkit-input-placeholder,
 input[type=url]::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: #57595C;
+  color: #57595c;
 }
 input[type=text]:-moz-placeholder,
 input[type=email]:-moz-placeholder,
@@ -269,7 +274,7 @@ input[type=number]:-moz-placeholder,
 input[type=password]:-moz-placeholder,
 input[type=url]:-moz-placeholder,
 textarea:-moz-placeholder {
-  color: #57595C;
+  color: #57595c;
 }
 input[type=text]::-moz-placeholder,
 input[type=email]::-moz-placeholder,
@@ -278,7 +283,7 @@ input[type=number]::-moz-placeholder,
 input[type=password]::-moz-placeholder,
 input[type=url]::-moz-placeholder,
 textarea::-moz-placeholder {
-  color: #57595C;
+  color: #57595c;
 }
 input[type=text]:-ms-input-placeholder,
 input[type=email]:-ms-input-placeholder,
@@ -287,7 +292,7 @@ input[type=number]:-ms-input-placeholder,
 input[type=password]:-ms-input-placeholder,
 input[type=url]:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: #57595C;
+  color: #57595c;
 }
 input[type=text]:focus,
 input[type=email]:focus,
@@ -6153,6 +6158,8 @@ img {
 }
 .tp-blog-sidebar-post-thumb img {
   width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 .tp-blog-sidebar-post-title:hover {
   color: var(--tp-theme-color);
