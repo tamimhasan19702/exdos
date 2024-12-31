@@ -38,20 +38,12 @@ $check_sidebar = is_active_sidebar('blog-sidebar') ? '' : 'justify-content-cente
             <div class="row <?php echo esc_attr($check_sidebar) ?>">
 
                 <div class="col-xl-8 col-lg-8">
-
                     <?php
-                    $args = array(
-                        'post_type' => 'post',
-                        'post_status' => 'publish',
-                       
-                    );
-                    $the_query = new WP_Query($args);
-                    if ($the_query->have_posts()) {
-                        while ($the_query->have_posts()) {
-                            $the_query->the_post();
+                    if (have_posts()) {
+                        while (have_posts()) {
+                            the_post();
                             get_template_part('template-parts/content', get_post_format());
                         }
-                        wp_reset_postdata();
                     } else {
                         echo '<p>' . esc_html__('No Posts To Display.', 'exdos') . '</p>';
                     }
