@@ -92,3 +92,15 @@ function get_exdos_category() {
 <?php
     }
 }
+
+function get_exdos_tags(){
+    $tags = get_the_tags();
+    if ( ! empty( $tags ) ) {
+        $output = '<span>';
+        foreach ( $tags as $tag ) {
+            $output .= '<a href="' . esc_url( get_tag_link( $tag->term_id ) ) . '">' . esc_html( $tag->name ) . '</a> ';
+        }
+        $output .= '</span>';
+        echo wp_kses_post( $output );
+    }
+}

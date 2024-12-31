@@ -4,7 +4,7 @@ if (is_single()) :
     ?>
 
 
-<article class="tp-postbox mb-60">
+<article id="post-<?php the_ID(); ?>" <?php post_class('tp-postbox mb-60'); ?>>
     <div class="tp-postbox-thumb mb-35 br-20">
         <?php the_post_thumbnail('post-thumbnail', ['alt' => get_the_title()]); ?>
     </div>
@@ -16,138 +16,49 @@ if (is_single()) :
             <?php get_exdos_category(); ?>
         </div>
         <h3 class="tp-postbox-title tp-fs-40 mb-30">
-            Potent be interdum ipsum pellentes code primis laoreet diam
-            per established
+            <?php echo esc_html(get_the_title()); ?>
         </h3>
         <div class="tp-postbox-details">
-            <p>
-                Dictum veledo lorem hendrerit habitasse curabitur purus
-                tacitian pellentesque facilisi ligula maecenas sodales
-                imperdiet lorem at ligula massa lorem elit morbi pede
-                aptent vestibulum taciti curae tortor duila nisiddo cum
-                accumsan donec ad. Laoreet dolor tempor cursus aptent eu
-                hymenaeos vestibulum. Viverra. Semper phasellus sapien. At
-                varius vehicula volutpat a nunc integer tortor risus massa
-                ante.
-            </p>
-            <p>
-                Purus tacitian pellentesque facilisi ligula maecenas
-                sodales imperdiet lorem at ligula massa lorem elit morbi
-                pede aptent vestibulum taciti beg curae tortor duila
-                nisiddo cum accumsan donec ad. Laoreet dolor tempor cursus
-                aptent eu hymenaeos vestibulum viverra. semper phasellus
-            </p>
-            <div class="tp-postbox-quote mt-30">
-                <blockquote>
-                    <i class="fal fa-quote-left"></i>
-                    <p>
-                        Hymenaeos convallis etiam metus fringilla imperdiet
-                        ads tellus integer justo ad ipsum scelerisque placerat
-                        laoreet lectus proin faucibus nisad potenti.
-                    </p>
-                    <cite>Fredrick C. McNeely</cite>
-                </blockquote>
-            </div>
-            <div class="tp-section-title-wrapper mb-30 mt-30">
-                <h2 class="tp-section-title mb-20 tp-fs-40">
-                    Evolution of brilliant ideas.
-                </h2>
-                <p>
-                    Imperdiet ridiculus do netus mollis gravida luctus
-                    consectetuer phasellus aliquet habitant, ante laoreet
-                    dictum hendrerit iaculis semper fames convallis senectus
-                    tortor elementum eros sociis amet tempus magna conubia
-                    suspendisse dignissim ad lobortis semifin habitant
-                    convallis adipiscing rutrum montes luctus consequat
-                    lacus auctor in creative venture libero quis neque
-                    turpis congue sit tempor.
-                </p>
-            </div>
-            <div class="row">
-                <div class="col-md-6 mb-40 br-10">
-                    <img src="assets/img/blog/blog-details-01.jpg" alt="" />
-                </div>
-                <div class="col-md-6 mb-40">
-                    <h3 class="tp-fs-30 mt-1">
-                        Painless digital advertising
-                    </h3>
-                    <p>
-                        Fermentum tempors ullamcorper facilisis malesuada orci
-                        lacus aliquet phasellus a interdum euismod eue
-                        Interdum lacinia nibh the magna accumsan molestie cume
-                        ads ferari so justo mollis hendrerit. Litora proin
-                        nonummy facilisis tristique quam.
-                    </p>
-                    <p>
-                        Fermentum tempors ullamcorper facilisis malesuada orci
-                        lacus aliquet phasellus a interdum euismod eue
-                        Interdum lacinia nibh the magna accumsan molestie cume
-                        ads ferari so justo mollis hendrerit. Litora proin
-                        nonummy facilisis tristique quam.
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 mb-40">
-                    <h3 class="tp-fs-30 mt-1">Let advertising blossom</h3>
-                    <p>
-                        Parturient turpis inceptos, eratena fusce hymenaeos
-                        natoque habitant nec aliquet tortor ads amet sapien
-                        suscipit ornare. Quisque to parturient magna dapibu
-                        odio. Posuere arcu class an dapibus tempor blandit
-                        Condimentum, quis ace a fringilla montes tristique in
-                        nostra hymenaeos rutrum name
-                    </p>
-                    <p>
-                        Eratena fusce hymenaeos natoque habitant nececer
-                        aliquet tortor ads amet bench sapien suscipit ornare
-                        quisque towa parturient magna dapibu odio posuere arcu
-                        class an dapibus
-                    </p>
-                </div>
-                <div class="col-md-6 mb-40 br-10">
-                    <img src="assets/img/blog/blog-details-02.jpg" alt="" />
-                </div>
-            </div>
-            <div class="tp-section-title-wrapper mb-30 mt-30">
-                <h2 class="tp-section-title mb-20 tp-fs-40">
-                    Opening doors to new ideas
-                </h2>
-                <p>
-                    Imperdiet ridiculus do netus mollis gravida luctus
-                    consectetuer phasellus aliquet habitant, ante laoreet
-                    dictum hendrerit iaculis semper fames convallis senectus
-                    tortor elementum eros sociis amet tempus magna conubia
-                    suspendisse dignissim ad lobortis semifin habitant
-                    convallis adipiscing rutrum montes luctus consequat
-                    lacus auctor in creative venture libero quis neque
-                    turpis congue sit tempor.
-                </p>
-                <p>
-                    Phasellus aliquet habitant before ante laoreet dictum
-                    hendrerit iaculis semper fames convallis senectus tortor
-                    elementum eros sociis amet tempus magna conubia dental
-                    suspendisse dignissim ad lobortis semifin habitant
-                    convallis adipiscing rutrum montes luctus consequat
-                    lacus
-                </p>
-            </div>
-            <div class="tp-postbox-tag-wrapper">
+            <?php the_content(); ?>
+
+            <div class="tp-postbox-tag-wrapper mt-50">
                 <div class="row align-items-center">
                     <div class="col-lg-7">
                         <div class="tp-postbox-tag">
                             <span>Tags:</span>
-                            <a href="blog.html">Design</a>
-                            <a href="blog.html">Creative</a>
-                            <a href="blog.html">brand</a>
+                            <?php get_exdos_tags(); ?>
                         </div>
                     </div>
                     <div class="col-lg-5">
                         <div class="tp-postbox-social text-start text-md-end">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <?php
+                            if (has_post_thumbnail()) :
+                                $image_id = get_post_thumbnail_id();
+                                $image_url = wp_get_attachment_image_src($image_id, 'full')[0];
+                            else :
+                                $image_url = get_template_directory_uri() . '/assets/img/logo/logo.png';
+                            endif;
+
+                            $post_title = get_the_title();
+                            $post_url = get_permalink();
+                            $post_excerpt = get_the_excerpt();
+
+                            $share_links = array(
+                                'facebook' => "https://www.facebook.com/sharer/sharer.php?u=" . $post_url,
+                                'twitter' => "https://twitter.com/intent/tweet?text=" . $post_title . "&url=" . $post_url,
+                                'linkedin' => "https://www.linkedin.com/sharing/share-offsite/?url=" . $post_url,
+                                'pinterest' => "https://pinterest.com/pin/create/button/?url=" . $post_url . "&media=" . $image_url . "&description=" . $post_excerpt,
+                            );
+
+                            foreach ($share_links as $key => $share_link) :
+                                if (get_post_meta(get_the_ID(), 'exdos_share_' . $key, true) !== 'no') :
+                                    ?>
+                            <a href="<?php echo esc_url($share_link); ?>" target="_blank"><i
+                                    class="fab fa-<?php echo esc_attr($key); ?>"></i></a>
+                            <?php
+                                endif;
+                            endforeach;
+                            ?>
                         </div>
                     </div>
                 </div>
