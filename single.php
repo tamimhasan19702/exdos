@@ -43,11 +43,20 @@ $check_sidebar = is_active_sidebar('blog-sidebar') ? '' : 'justify-content-cente
                         while (have_posts()) {
                             the_post();
                             get_template_part('template-parts/content', get_post_format());
+
+                            
+                   
+                    if ( comments_open() || get_comments_number() ) :
+                        comments_template();
+                    endif;
+                    
                         }
                     } else {
                         echo '<p>' . esc_html__('No Posts To Display.', 'exdos') . '</p>';
                     }
                     ?>
+
+
 
                     <?php get_template_part('template-parts/blog/pagination') ?>
                 </div>
