@@ -25,6 +25,13 @@ if (!function_exists('exdos_scripts')):
         wp_enqueue_script('jquery-waypoints', get_template_directory_uri() . '/assets/js/jquery.waypoints.min.js', array('jquery'), '5.3.3', true);
         wp_enqueue_script('jarallax', get_template_directory_uri() . '/assets/js/jarallax.min.js', array('jquery'), '5.3.3', true);
         wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.0', true);
+        wp_enqueue_script(
+            'lottie-player', 
+            'https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js', 
+            array(), 
+            null, 
+            true
+        );
 
         if (is_singular() && comments_open() && get_option('thread_comments')) {
             wp_enqueue_script('comment-reply');

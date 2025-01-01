@@ -1,10 +1,6 @@
 <?php
-
 get_header();
-
-
 ?>
-
 <main>
 
     <section class="tp-breadcrumb-area tp-breadcrumb-space p-relative"
@@ -31,46 +27,45 @@ get_header();
     </section>
 
 
-    <section class="tp-blogpost-area pt-130 pb-130">
-        <div class="container">
-            <div class="row 
-            justify-content-center">
 
-                <div class="col-xl-8 col-lg-8">
+    <section class="tp-page-area pt-130 pb-130">
+        <div class="container justify-content-center">
+            <div class="row ">
 
+                <div class="col-xl-12">
+                    <?php
+                    if (have_posts()) {
+                        while (have_posts()) {
+                            the_post();
+                            get_template_part('template-parts/content', 'page');
 
-
-                    <div class="error-page text-center">
-
-
-                        <lottie-player src="<?php echo get_template_directory_uri(); ?> /assets/img/404/404.json" ?
-                            background="transparent" speed="1" style="width: 100%; height: 500px;" loop autoplay>
-                        </lottie-player>
-                        <h1>404 Error</h1>
-                        <p>Whoops, this is emberassing. Looks like the page you're looking for isn't here. <br></p>
-                        <div class="tp-about-btn">
-                            <a href="<?php echo esc_url(home_url('/')); ?>" class="tp-btn">
-                                <span class="tp-btn-wrap">
-                                    <span class="tp-btn-y-1">Back To Home</span>
-                                    <span class="tp-btn-y-2">Back To Home</span>
-                                </span>
-                                <i></i>
-                            </a>
-                        </div>
-                    </div>
+                            
+                   
+                    if ( comments_open() || get_comments_number() ) :
+                        comments_template();
+                    endif;
+                    
+                        }
+                    } else {
+                        echo '<p>' . esc_html__('Content not found', 'exdos') . '</p>';
+                    }
+                    ?>
 
 
+
+                    <?php get_template_part('template-parts/blog/pagination') ?>
                 </div>
-
 
             </div>
         </div>
     </section>
 
+
+
+
+
+
 </main>
-
-
-
 
 
 
