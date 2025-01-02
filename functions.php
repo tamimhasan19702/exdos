@@ -20,6 +20,7 @@ include_once(get_template_directory() . '/includes/theme-support.php');
 include_once(get_template_directory() . '/includes/theme-functionality.php');
 include_once(get_template_directory() . '/includes/class_exdos_walker_nav_menu.php');
 include_once(get_template_directory() . '/includes/sidebar-recent-post.php');
+include_once(get_template_directory() . '/includes/breadcrumb.php');
 
 if (class_exists('Kirki')) {
     include_once(get_template_directory() . '/includes/kirki/kirki-header-functions.php');
