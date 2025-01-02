@@ -317,3 +317,34 @@ function exdos_search_section()
 }
 
 exdos_search_section();
+
+
+function exdos_breadcrumb_section()
+{
+    if (class_exists('Kirki\Section')) {
+        new \Kirki\Section(
+            'exdos_breadcrumb_section',
+            [
+                'title' => esc_html__('Exdos Breadcrumb Section', 'kirki'),
+                'description' => esc_html__('Exdos Breadcrumb Section Description', 'kirki'),
+                'panel' => 'exdos_kirki_panel',
+                'priority' => 160,
+            ]
+        );
+
+        if (class_exists('Kirki\Field')) {
+
+            new \Kirki\Field\Image(
+                [
+                    'settings' => 'exdos_breadcrumb_image',
+                    'label' => esc_html__('Breadcrumb Image', 'kirki'),
+                    'section' => 'exdos_breadcrumb_section',
+                    'default' => '',
+                ]
+            );
+
+        }
+    }
+}
+
+exdos_breadcrumb_section();

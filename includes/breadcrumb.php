@@ -49,7 +49,7 @@ function exdos_breadcrumb()
     }
 
     // Get custom breadcrumb background image and switch
-    $breadcrumb_bg_img = get_theme_mod('breadcrumb_image');
+    $breadcrumb_bg_img = get_theme_mod('exdos_breadcrumb_image');
     $breadcrumb_switch = function_exists('get_field') ? get_field('breacrumb_on_off', $_id) : null;
 
     // Render the breadcrumb section
