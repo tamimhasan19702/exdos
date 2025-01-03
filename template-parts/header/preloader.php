@@ -26,4 +26,4 @@ function exdos_preloader()
 
 }
 
-// exdos_preloader();
+exdos_preloader();
