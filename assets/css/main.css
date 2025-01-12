@@ -345,6 +345,7 @@ textarea {
   font-weight: 500;
 }
 
+/** @format */
 /*----------------------------------------*/
 /*  1.2 Common Classes
 /*----------------------------------------*/
@@ -552,6 +553,22 @@ img {
   .solid-bg.jarallax {
     height: 300px;
   }
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
 }
 
 /*----------------------------------------*/
