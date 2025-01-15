@@ -206,3 +206,29 @@ img {
 .text-justify {
   text-align: justify;
 }
+
+.mc4wp-form-fields {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 0px;
+  @media #{$md} {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  @media #{$sm} {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.exdos-input {
+  width: 100%;
+}
+
+.tp-newsletter-back {
+  @media #{$md} {
+    display: none !important;
+  }
+}

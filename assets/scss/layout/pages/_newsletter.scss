@@ -1,98 +1,103 @@
-@use '../../utils' as *;
+/** @format */
+
+@use "../../utils" as *;
 
 /*----------------------------------------*/
 /*  6.9 Newsletter
 /*----------------------------------------*/
 
-.tp-newsletter{
-    &-margin{
-        margin-top: -110px;
+.tp-newsletter {
+  &-margin {
+    margin-top: -110px;
+  }
+  &-bg {
+    padding: 80px;
+    border-radius: 20px;
+    @media #{$md} {
+      padding-left: 40px;
+      padding-right: 40px;
     }
-    &-bg {
-        padding: 80px;
-        border-radius: 20px;
-        @media #{$md}{
-            padding-left: 40px;
-            padding-right: 40px;
-        }
-        @media #{$xs}{
-            padding: 60px 20px;
-        }
+    @media #{$xs} {
+      padding: 60px 20px;
     }
-    &-box{
-        @media #{$lg}{
-            margin-top: 30px;
-        }
-        & form{
-            @include flexbox();
-            flex-wrap: wrap;
-            justify-content: space-between;
-            @media #{$xs}{
-                display: block;
-            }
-        }
-        & input{
-            border-color: #fff;
-            color: #fff;
-            &:focus{
-                border-color: #fff;
-            }
-            @include tp-placeholder{
-                color: #fff;
-            }
-        }
+  }
+  &-box {
+    @media #{$lg} {
+      margin-top: 30px;
     }
-    &-input{
-        width: calc(100% - 205px);
-        @media #{$xs}{
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        & img{
-            position: absolute;
-            right: 20px;
-            top: 22px;
-        }
-        & i{
-            position: absolute;
-            right: 20px;
-            top: 22px;
-            color: #57595C;
-        }
+    & form {
+      @include flexbox();
+      flex-wrap: wrap;
+      justify-content: space-between;
+      @media #{$xs} {
+        display: block;
+      }
     }
-    &-back{
-        color: #FFF;
-        font-size: 100px;
-        opacity: 0.1;
-        position: absolute;
-        left: 83px;
-        bottom: -23px;
-        line-height: 1;
-        margin: 0;
-        @media #{$xl}{
-            font-size: 80px;
-            left: 40px
-        }
-        @media #{$md}{
-            font-size: 75px;
-            left: 30px
-        }
-    }
-    &-box-2{
-        & input {
-            border-color: #57595C;
-            color: #57595C;
-            &:focus{
-                border-color: #57595C;
-            }
-            @include tp-placeholder{
-                color: #57595C;
-            }
-        }
-        & .tp-newsletter-back{
-            opacity: 1;
-            color: #EEEBE6;
-        }
-    }
+    & input {
+      border-color: #fff;
+      color: #fff;
+      width: 100% !important;
+      max-width: 100% !important;
 
+      &:focus {
+        border-color: #fff;
+      }
+      @include tp-placeholder {
+        color: #fff;
+      }
+    }
+  }
+  &-input {
+    width: calc(100% - 205px);
+
+    @media #{$xs} {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    & img {
+      position: absolute;
+      right: 20px;
+      top: 22px;
+    }
+    & i {
+      position: absolute;
+      right: 20px;
+      top: 22px;
+      color: #57595c;
+    }
+  }
+  &-back {
+    color: #fff;
+    font-size: 100px;
+    opacity: 0.1;
+    position: absolute;
+    left: 83px;
+    bottom: -23px;
+    line-height: 1;
+    margin: 0;
+    @media #{$xl} {
+      font-size: 80px;
+      left: 40px;
+    }
+    @media #{$md} {
+      font-size: 75px;
+      left: 30px;
+    }
+  }
+  &-box-2 {
+    & input {
+      border-color: #57595c;
+      color: #57595c;
+      &:focus {
+        border-color: #57595c;
+      }
+      @include tp-placeholder {
+        color: #57595c;
+      }
+    }
+    & .tp-newsletter-back {
+      opacity: 1;
+      color: #eeebe6;
+    }
+  }
 }

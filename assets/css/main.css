@@ -571,6 +571,35 @@ img {
   text-align: justify;
 }
 
+.mc4wp-form-fields {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 0px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .mc4wp-form-fields {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .mc4wp-form-fields {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.exdos-input {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .tp-newsletter-back {
+    display: none !important;
+  }
+}
+
 /*----------------------------------------*/
 /*  1.3 Default Spacing
 /*----------------------------------------*/
@@ -8072,6 +8101,7 @@ img {
   }
 }
 
+/** @format */
 /*----------------------------------------*/
 /*  6.9 Newsletter
 /*----------------------------------------*/
@@ -8115,6 +8145,8 @@ img {
 .tp-newsletter-box input {
   border-color: #fff;
   color: #fff;
+  width: 100% !important;
+  max-width: 100% !important;
 }
 .tp-newsletter-box input:focus {
   border-color: #fff;
@@ -8149,10 +8181,10 @@ img {
   position: absolute;
   right: 20px;
   top: 22px;
-  color: #57595C;
+  color: #57595c;
 }
 .tp-newsletter-back {
-  color: #FFF;
+  color: #fff;
   font-size: 100px;
   opacity: 0.1;
   position: absolute;
@@ -8174,27 +8206,27 @@ img {
   }
 }
 .tp-newsletter-box-2 input {
-  border-color: #57595C;
-  color: #57595C;
+  border-color: #57595c;
+  color: #57595c;
 }
 .tp-newsletter-box-2 input:focus {
-  border-color: #57595C;
+  border-color: #57595c;
 }
 .tp-newsletter-box-2 input::-webkit-input-placeholder {
-  color: #57595C;
+  color: #57595c;
 }
 .tp-newsletter-box-2 input:-moz-placeholder {
-  color: #57595C;
+  color: #57595c;
 }
 .tp-newsletter-box-2 input::-moz-placeholder {
-  color: #57595C;
+  color: #57595c;
 }
 .tp-newsletter-box-2 input:-ms-input-placeholder {
-  color: #57595C;
+  color: #57595c;
 }
 .tp-newsletter-box-2 .tp-newsletter-back {
   opacity: 1;
-  color: #EEEBE6;
+  color: #eeebe6;
 }
 
 /*----------------------------------------*/
