@@ -600,6 +600,11 @@ img {
   }
 }
 
+.tpfact__text span {
+  margin: 0; /* Remove any margin */
+  padding: 0; /* Remove any padding */
+}
+
 /*----------------------------------------*/
 /*  1.3 Default Spacing
 /*----------------------------------------*/

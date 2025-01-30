@@ -11,6 +11,7 @@ $phone_number = get_theme_mod('exdos_header_phone_number', '02 (256) 256 025');
         <div class="container-fluid p-0">
             <div class="row gx-0 align-items-center">
                 <div class="col-xl-2 col-lg-5 col-md-4 col-6">
+
                     <div class="tp-logo">
                         <a href="index.html"><img src="<?php echo esc_url($logo); ?>" alt=""></a>
                     </div>

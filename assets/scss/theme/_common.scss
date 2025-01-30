@@ -232,3 +232,8 @@ img {
     display: none !important;
   }
 }
+
+.tpfact__text span {
+  margin: 0; /* Remove any margin */
+  padding: 0; /* Remove any padding */
+}
