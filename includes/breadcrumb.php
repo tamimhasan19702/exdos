@@ -53,31 +53,38 @@ function exdos_breadcrumb()
     $breadcrumb_bg_img = get_theme_mod('exdos_breadcrumb_image');
     $breadcrumb_switch = function_exists('get_field') ? get_field('breacrumb_on_off', $_id) : null;
 
+
+    //$breadcrumb_switch = true;
+
     // Render the breadcrumb section
     ?>
-    <?php if (!empty($breadcrumb_switch) && $breadcrumb_switch): ?>
-        <section class="tp-breadcrumb-area tp-breadcrumb-space p-relative"
-            data-background="<?php echo esc_url($breadcrumb_bg_img); ?>" data-bg-color="#0A0E1A">
-            <div class="tp-breadcrumb-shape">
-                <img class="tp-breadcrumb-shape-1 p-absolute"
-                    src="<?php echo get_template_directory_uri(); ?>/assets/img/breadcrumb/shape-1.png" alt="">
-                <img class="tp-breadcrumb-shape-2 p-absolute"
-                    src="<?php echo get_template_directory_uri(); ?>/assets/img/breadcrumb/shape-2.png" alt="">
-                <img class="tp-breadcrumb-shape-3 p-absolute"
-                    src="<?php echo get_template_directory_uri(); ?>/assets/img/breadcrumb/shape-3.png" alt="">
+<?php 
+if (!empty($breadcrumb_switch) && $breadcrumb_switch):
+     ?>
+<section class="tp-breadcrumb-area tp-breadcrumb-space p-relative"
+    data-background="<?php echo esc_url($breadcrumb_bg_img); ?>" data-bg-color="#0A0E1A">
+    <div class="tp-breadcrumb-shape">
+        <img class="tp-breadcrumb-shape-1 p-absolute"
+            src="<?php echo get_template_directory_uri(); ?>/assets/img/breadcrumb/shape-1.png" alt="">
+        <img class="tp-breadcrumb-shape-2 p-absolute"
+            src="<?php echo get_template_directory_uri(); ?>/assets/img/breadcrumb/shape-2.png" alt="">
+        <img class="tp-breadcrumb-shape-3 p-absolute"
+            src="<?php echo get_template_directory_uri(); ?>/assets/img/breadcrumb/shape-3.png" alt="">
+    </div>
+    <div class="container">
+        <div class="tp-breadcrumb text-center position-relative z-index-2">
+            <h1 class="tp-breadcrumb-title tp-upper tp-text-white"><?php echo wp_kses_post($title); ?></h1>
+            <?php if (function_exists('bcn_display')): ?>
+            <div class="tp-breadcrumb-list">
+                <?php bcn_display(); ?>
             </div>
-            <div class="container">
-                <div class="tp-breadcrumb text-center position-relative z-index-2">
-                    <h1 class="tp-breadcrumb-title tp-upper tp-text-white"><?php echo wp_kses_post($title); ?></h1>
-                    <?php if (function_exists('bcn_display')): ?>
-                        <div class="tp-breadcrumb-list">
-                            <?php bcn_display(); ?>
-                        </div>
-                    <?php endif; ?>
-                </div>
-            </div>
-        </section>
-    <?php endif; ?>
+            <?php endif; ?>
+        </div>
+    </div>
+</section>
+<?php
+ endif
+ ; ?>
 <?php
 }
 

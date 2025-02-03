@@ -1,8 +1,7 @@
 <?php
 
 get_header();
-get_template_part(get_template_directory() . '/template-parts/breadcrumb');
-do_action('exdos_breadcrumb_hook');
+
 $check_sidebar = is_active_sidebar('blog-sidebar') ? '' : 'justify-content-center';
 ?>
 

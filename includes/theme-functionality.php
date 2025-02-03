@@ -86,12 +86,12 @@ function get_exdos_category()
     if (!empty($categories)) {
         $category = $categories[0];
         ?>
-        <span>
-            <a href="<?php echo esc_url(get_category_link($category->term_id)); ?>">
-                <i class="fal fa-certificate"></i> <?php echo esc_html($category->name); ?>
-            </a>
-        </span>
-        <?php
+<span>
+    <a href="<?php echo esc_url(get_category_link($category->term_id)); ?>">
+        <i class="fal fa-certificate"></i> <?php echo esc_html($category->name); ?>
+    </a>
+</span>
+<?php
     }
 }
 
@@ -350,4 +350,65 @@ function exdos_kses($content = '')
     ];
 
     return wp_kses($content, $allowed_html);
+}
+
+
+if (function_exists('acf_add_local_field_group')) {
+    acf_add_local_field_group(array(
+        'key' => 'group_breadcrumb_settings', // Unique key for the field group
+        'title' => 'Breadcrumb Settings', // Title of the field group
+        'fields' => array(
+            array(
+                'key' => 'field_breacrumb_on_off', // Unique key for the field
+                'label' => 'Enable Breadcrumb', // Label for the field
+                'name' => 'breacrumb_on_off', // Name of the field (used in get_field())
+                'type' => 'true_false', // Checkbox field (True/False)
+                'instructions' => 'Toggle breadcrumb display for this page/post.', // Instructions for the user
+                'required' => 0, // Not required
+                'conditional_logic' => 0, // No conditional logic
+                'wrapper' => array(
+                    'width' => '', // Full width
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => 'Enable breadcrumb for this page/post', // Checkbox label
+                'default_value' => true, // Default value (checked by default)
+                'ui' => 1, // Use UI styling
+                'ui_on_text' => 'Yes', // Text for "on" state
+                'ui_off_text' => 'No', // Text for "off" state
+                'return_format' => 'bool', // Return the value as a boolean (true/false)
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'post_type', // Show this field group for all post types
+                    'operator' => '==',
+                    'value' => 'post',
+                ),
+            ),
+            array(
+                array(
+                    'param' => 'post_type', // Show this field group for pages
+                    'operator' => '==',
+                    'value' => 'page',
+                ),
+            ),
+            array(
+                array(
+                    'param' => 'post_type', // Show this field group for custom post types (e.g., 'product')
+                    'operator' => '==',
+                    'value' => 'product',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'side', // Display in the sidebar of the editor
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+    ));
 }
