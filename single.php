@@ -1,6 +1,8 @@
 <?php
 
 get_header();
+get_template_part(get_template_directory() . '/template-parts/breadcrumb');
+do_action('exdos_breadcrumb_hook');
 $check_sidebar = is_active_sidebar('blog-sidebar') ? '' : 'justify-content-center';
 ?>
 
@@ -39,9 +41,9 @@ $check_sidebar = is_active_sidebar('blog-sidebar') ? '' : 'justify-content-cente
                 </div>
 
                 <?php if (is_active_sidebar('blog-sidebar')): ?>
-                    <div class="col-xl-4 col-lg-4">
-                        <?php get_sidebar(); ?>
-                    </div>
+                <div class="col-xl-4 col-lg-4">
+                    <?php get_sidebar(); ?>
+                </div>
                 <?php endif; ?>
 
             </div>
