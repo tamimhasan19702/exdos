@@ -106,7 +106,6 @@
   --tp-font-flaticon: "flaticon";
 }
 
-/** @format */
 * {
   margin: 0;
   padding: 0;
@@ -126,6 +125,10 @@ body {
 
 a {
   text-decoration: none;
+}
+
+img {
+  height: auto;
 }
 
 h1,
@@ -247,7 +250,7 @@ textarea {
   font-size: 15px;
   color: var(--tp-common-black);
   border: 0;
-  border-bottom: 1px solid #57595C;
+  border-bottom: 1px solid #57595c;
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -258,7 +261,7 @@ input[type=number]::-webkit-input-placeholder,
 input[type=password]::-webkit-input-placeholder,
 input[type=url]::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: #57595C;
+  color: #57595c;
 }
 input[type=text]:-moz-placeholder,
 input[type=email]:-moz-placeholder,
@@ -267,7 +270,7 @@ input[type=number]:-moz-placeholder,
 input[type=password]:-moz-placeholder,
 input[type=url]:-moz-placeholder,
 textarea:-moz-placeholder {
-  color: #57595C;
+  color: #57595c;
 }
 input[type=text]::-moz-placeholder,
 input[type=email]::-moz-placeholder,
@@ -276,7 +279,7 @@ input[type=number]::-moz-placeholder,
 input[type=password]::-moz-placeholder,
 input[type=url]::-moz-placeholder,
 textarea::-moz-placeholder {
-  color: #57595C;
+  color: #57595c;
 }
 input[type=text]:-ms-input-placeholder,
 input[type=email]:-ms-input-placeholder,
@@ -285,7 +288,7 @@ input[type=number]:-ms-input-placeholder,
 input[type=password]:-ms-input-placeholder,
 input[type=url]:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: #57595C;
+  color: #57595c;
 }
 input[type=text]:focus,
 input[type=email]:focus,
@@ -341,7 +344,6 @@ textarea {
   font-weight: 500;
 }
 
-/** @format */
 /** @format */
 /*----------------------------------------*/
 /*  1.2 Common Classes
@@ -410,38 +412,38 @@ img {
 }
 
 .br-24 {
-  border-radius: 24px !important;
+  border-radius: 24px;
 }
 
 .br-5 > img {
-  border-radius: 5px !important;
+  border-radius: 5px;
 }
 .br-10 > img {
-  border-radius: 10px !important;
+  border-radius: 10px;
 }
 .br-15 > img {
-  border-radius: 15px !important;
+  border-radius: 15px;
 }
 .br-20 {
-  border-radius: 20px !important;
+  border-radius: 20px;
 }
 .br-20 > img, .br-20 > a img {
-  border-radius: 20px !important;
+  border-radius: 20px;
 }
 .br-140 {
-  border-radius: 140px !important;
+  border-radius: 140px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .br-140 {
-    border-radius: 0 !important;
+    border-radius: 0;
   }
 }
 .br-150 {
-  border-radius: 150px !important;
+  border-radius: 150px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .br-150 {
-    border-radius: 0 !important;
+    border-radius: 0;
   }
 }
 
@@ -551,7 +553,56 @@ img {
   }
 }
 
-/** @format */
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.mc4wp-form-fields {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 0px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .mc4wp-form-fields {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .mc4wp-form-fields {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.exdos-input {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .tp-newsletter-back {
+    display: none !important;
+  }
+}
+
+.tpfact__text span {
+  margin: 0; /* Remove any margin */
+  padding: 0; /* Remove any padding */
+}
+
 /*----------------------------------------*/
 /*  1.3 Default Spacing
 /*----------------------------------------*/
@@ -4687,7 +4738,6 @@ img {
   }
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  2.1 Accordion
 /*----------------------------------------*/
@@ -4755,7 +4805,6 @@ img {
   }
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  2.4 Button
 /*----------------------------------------*/
@@ -4977,7 +5026,6 @@ img {
   background-color: var(--tp-theme-color-2);
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  2.9 Section Title
 /*----------------------------------------*/
@@ -5083,7 +5131,6 @@ img {
   }
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  2.6 Offcanvas
 /*----------------------------------------*/
@@ -5184,7 +5231,6 @@ img {
   visibility: visible;
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  2.3 Breadcrumb
 /*----------------------------------------*/
@@ -5232,7 +5278,6 @@ img {
   z-index: 1;
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  2.9 Skill
 /*----------------------------------------*/
@@ -5282,7 +5327,6 @@ img {
   right: 8px;
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  2.8 Search Bar
 /*----------------------------------------*/
@@ -5321,7 +5365,6 @@ img {
   height: 45px;
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  2.7 Preloader
 /*----------------------------------------*/
@@ -5397,7 +5440,6 @@ img {
     transform: rotate(360deg) scale(0.8);
   }
 }
-/** @format */
 /*----------------------------------------*/
 /*  2.2 Back to Top
 /*----------------------------------------*/
@@ -5424,7 +5466,6 @@ img {
   transform: scale(1);
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  2.5 Custom Animation
 /*----------------------------------------*/
@@ -5657,7 +5698,7 @@ img {
 .tp-postbox-meta span:after {
   position: absolute;
   content: "";
-  background: #57595C;
+  background: #57595c;
   height: 16px;
   width: 2px;
   right: 0;
@@ -5676,7 +5717,7 @@ img {
   }
 }
 .tp-postbox-details blockquote {
-  border: 1px solid #57595C;
+  border: 1px solid #57595c;
   text-align: center;
   border-radius: 20px;
   padding: 60px;
@@ -5698,7 +5739,7 @@ img {
   margin-bottom: 30px;
 }
 .tp-postbox-details blockquote cite {
-  color: #0A0E1A;
+  color: #0a0e1a;
   font-size: 20px;
   font-style: normal;
 }
@@ -5708,21 +5749,21 @@ img {
   }
 }
 .tp-postbox-tag-wrapper {
-  border: 1px solid #57595C;
+  border: 1px solid #57595c;
   padding: 25px 40px;
   border-radius: 10px;
 }
 .tp-postbox-tag span {
-  color: #0A0E1A;
+  color: #0a0e1a;
   font-weight: 500;
   margin-right: 5px;
 }
 .tp-postbox-tag a {
   font-size: 15px;
   font-weight: 500;
-  color: #0A0E1A;
+  color: #0a0e1a;
   text-transform: uppercase;
-  background: #FBF6EF;
+  background: #fbf6ef;
   display: inline-block;
   padding: 17px 18px;
   line-height: 1;
@@ -5740,11 +5781,11 @@ img {
   color: #fff;
 }
 .tp-postbox-social a {
-  border: 1px solid #57595C;
+  border: 1px solid #57595c;
   line-height: 40px;
   text-align: center;
   font-size: 14px;
-  color: #57595C;
+  color: #57595c;
   border-radius: 10px;
   height: 42px;
   width: 42px;
@@ -5782,7 +5823,7 @@ img {
   position: relative;
 }
 .tp-postbox-comments-text span {
-  color: #57595C;
+  color: #57595c;
   font-size: 15px;
   font-weight: 500;
   text-transform: uppercase;
@@ -5794,18 +5835,21 @@ img {
   margin-bottom: 5px;
 }
 
-.reply {
+.reply,
+.comments-reply-link {
   position: absolute;
   right: 0;
   top: 0;
   font-size: 18px;
-  color: #57595C;
+  color: #57595c;
 }
-.reply:hover {
+.reply:hover,
+.comments-reply-link:hover {
   color: var(--tp-theme-color);
 }
 @media (max-width: 767px) {
-  .reply {
+  .reply,
+  .comments-reply-link {
     position: static;
   }
 }
@@ -5859,30 +5903,45 @@ img {
   display: inline-block;
   margin-right: 7px;
 }
-.tp-pagination ul li a {
-  border: 1px solid #57595C;
+.tp-pagination ul li a, .tp-pagination ul li span {
+  border: 1px solid #57595c;
   line-height: 58px;
   text-align: center;
   font-size: 17px;
   font-weight: 500;
-  color: #57595C;
+  color: #57595c;
   border-radius: 20px;
   height: 60px;
   width: 60px;
   display: inline-block;
   transition: 0.3s;
 }
-.tp-pagination ul li a:hover {
+.tp-pagination ul li a.active, .tp-pagination ul li a:hover, .tp-pagination ul li a.current, .tp-pagination ul li span.active, .tp-pagination ul li span:hover, .tp-pagination ul li span.current {
   background-color: var(--tp-theme-color);
   border-color: var(--tp-theme-color);
   color: #fff;
 }
-.tp-pagination ul li a i {
+.tp-pagination ul li a i, .tp-pagination ul li span i {
   font-size: 26px;
   transform: translateY(3px);
 }
 
-/** @format */
+.contact-form-box textarea {
+  height: 150px;
+}
+
+.postbox__comment li .children {
+  margin-top: 50px;
+  padding-left: 50px;
+}
+
+.comment-reply-title {
+  font-size: 40px;
+}
+.comment-reply-title small {
+  padding-left: 50px;
+}
+
 /*----------------------------------------*/
 /*  4.2 Recent Post
 /*----------------------------------------*/
@@ -6019,7 +6078,7 @@ img {
 /*  4.3 Sidebar
 /*----------------------------------------*/
 .tp-blog-sidebar-widget {
-  background: #FBF6EF;
+  background: #fbf6ef;
   padding: 40px;
   border-radius: 10px;
 }
@@ -6034,6 +6093,9 @@ img {
 }
 .tp-blog-sidebar-post-thumb img {
   width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .tp-blog-sidebar-post-title:hover {
   color: var(--tp-theme-color);
@@ -6043,13 +6105,13 @@ img {
   list-style: none;
 }
 .tp-blog-sidebar-cat ul li a {
-  color: #57595C;
+  color: #57595c;
   display: block;
   padding: 20px 25px;
   line-height: 1;
   position: relative;
   background-color: #fff;
-  border: 1px solid #57595C;
+  border: 1px solid #57595c;
   border-radius: 5px;
 }
 .tp-blog-sidebar-cat ul li a:hover {
@@ -6069,8 +6131,39 @@ img {
   margin-bottom: 0;
 }
 
+.widget_categories ul li {
+  margin-bottom: 15px;
+  list-style: none;
+}
+.widget_categories ul li a {
+  color: #57595c;
+  display: block;
+  padding: 20px 25px;
+  line-height: 1;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #57595c;
+  border-radius: 5px;
+}
+.widget_categories ul li a:hover {
+  background-color: var(--tp-theme-color);
+  color: #fff;
+  border-color: var(--tp-theme-color);
+}
+.widget_categories ul li a:after {
+  content: "\f061";
+  font-family: "Font Awesome 5 Pro";
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-40deg);
+}
+.widget_categories ul li:last-child {
+  margin-bottom: 0;
+}
+
 .tp-blog-form input {
-  border: 1px solid #57595C;
+  border: 1px solid #57595c;
   padding: 0 20px;
   border-radius: 5px;
 }
@@ -6098,7 +6191,7 @@ img {
 }
 
 .tp-blog-sidebar-post-item {
-  border-bottom: 1px solid #57595C;
+  border-bottom: 1px solid #57595c;
   margin-bottom: 20px;
   padding-bottom: 15px;
 }
@@ -6109,10 +6202,10 @@ img {
 }
 
 .tagcloud a {
-  font-size: 15px;
+  font-size: 15px !important;
   font-weight: 500;
-  border: 1px solid #57595C;
-  color: #57595C;
+  border: 1px solid #57595c;
+  color: #57595c;
   padding: 17px 17px;
   display: inline-block;
   line-height: 1;
@@ -6127,7 +6220,6 @@ img {
   border-color: var(--tp-theme-color);
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  5.1 Footer Style 1
 /*----------------------------------------*/
@@ -6325,7 +6417,6 @@ img {
   top: 10%;
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  5.2 Footer Style 2
 /*----------------------------------------*/
@@ -6478,7 +6569,6 @@ img {
   border-bottom: 1px solid #57595C;
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  5.3 Footer Style 3
 /*----------------------------------------*/
@@ -6509,7 +6599,6 @@ img {
   }
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  3.1 Header Style
 /*----------------------------------------*/
@@ -6885,7 +6974,6 @@ img {
   background-color: #fff;
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  3.2 Mobile Menu
 /*----------------------------------------*/
@@ -6986,7 +7074,7 @@ img {
   }
 }
 .tp-hero-title {
-  color: #FFF;
+  color: #fff;
   font-size: 110px;
   text-transform: uppercase;
   margin: 0;
@@ -7012,13 +7100,13 @@ img {
   }
 }
 .tp-hero-title span {
-  background: radial-gradient(42.24% 2817.5% at 52.45% 54.17%, rgba(255, 232, 21, 0.95) 0%, #3C7FFF 100%);
+  background: radial-gradient(42.24% 2817.5% at 52.45% 54.17%, rgba(255, 232, 21, 0.95) 0%, #3c7fff 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .tp-hero-title i {
-  color: #B1B4BA;
+  color: #b1b4ba;
   font-size: 30px;
   font-style: normal;
   display: inline-block;
@@ -7069,7 +7157,7 @@ img {
   }
 }
 .tp-hero-title-black {
-  color: #0A0E1A;
+  color: #0a0e1a;
   font-size: 100px;
   animation-delay: 0.3s;
   animation-duration: 1s;
@@ -7141,7 +7229,7 @@ img {
   align-items: center;
 }
 .tp-hero-url-box i {
-  color: #B1B4BA;
+  color: #b1b4ba;
   font-size: 52px;
   display: inline-flex;
   margin-left: -24px;
@@ -7219,7 +7307,7 @@ img {
 }
 
 .hero-info {
-  color: #B1B4BA;
+  color: #b1b4ba;
   font-size: 15px;
   font-weight: 500;
   text-transform: uppercase;
@@ -7387,7 +7475,7 @@ img {
   height: 717px;
   width: 717px;
   top: 140px;
-  background: #FFE6CE;
+  background: #ffe6ce;
   border-radius: 100%;
   left: -100px;
 }
@@ -7488,7 +7576,7 @@ img {
   display: flex;
   transform: rotate(-90deg);
   font-size: 17px;
-  color: #0A0E1A;
+  color: #0a0e1a;
   top: 49%;
   left: 0;
   font-weight: 500;
@@ -7546,7 +7634,6 @@ img {
   animation-fill-mode: both;
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  6.1 About
 /*----------------------------------------*/
@@ -7840,6 +7927,8 @@ img {
 .tp-newsletter-box input {
   border-color: #fff;
   color: #fff;
+  width: 100% !important;
+  max-width: 100% !important;
 }
 .tp-newsletter-box input:focus {
   border-color: #fff;
@@ -7874,10 +7963,10 @@ img {
   position: absolute;
   right: 20px;
   top: 22px;
-  color: #57595C;
+  color: #57595c;
 }
 .tp-newsletter-back {
-  color: #FFF;
+  color: #fff;
   font-size: 100px;
   opacity: 0.1;
   position: absolute;
@@ -7899,30 +7988,29 @@ img {
   }
 }
 .tp-newsletter-box-2 input {
-  border-color: #57595C;
-  color: #57595C;
+  border-color: #57595c;
+  color: #57595c;
 }
 .tp-newsletter-box-2 input:focus {
-  border-color: #57595C;
+  border-color: #57595c;
 }
 .tp-newsletter-box-2 input::-webkit-input-placeholder {
-  color: #57595C;
+  color: #57595c;
 }
 .tp-newsletter-box-2 input:-moz-placeholder {
-  color: #57595C;
+  color: #57595c;
 }
 .tp-newsletter-box-2 input::-moz-placeholder {
-  color: #57595C;
+  color: #57595c;
 }
 .tp-newsletter-box-2 input:-ms-input-placeholder {
-  color: #57595C;
+  color: #57595c;
 }
 .tp-newsletter-box-2 .tp-newsletter-back {
   opacity: 1;
-  color: #EEEBE6;
+  color: #eeebe6;
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  6.4 Contact
 /*----------------------------------------*/
@@ -8037,7 +8125,6 @@ img {
   }
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  6.5 CTA
 /*----------------------------------------*/
@@ -8052,7 +8139,6 @@ img {
   opacity: 0.8;
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  3.1 Header Style
 /*----------------------------------------*/
@@ -8159,7 +8245,6 @@ img {
   }
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  6.10 Portfolio
 /*----------------------------------------*/
@@ -8597,7 +8682,6 @@ img {
   display: block;
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  6.13 Servicess
 /*----------------------------------------*/
@@ -8826,7 +8910,6 @@ img {
   text-align: center;
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  6.14 Team
 /*----------------------------------------*/
@@ -9073,7 +9156,6 @@ img {
   width: 100%;
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  6.15 Testimonial
 /*----------------------------------------*/
@@ -9427,7 +9509,6 @@ img {
   }
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  6.2 Award
 /*----------------------------------------*/
@@ -9483,7 +9564,6 @@ img {
   margin: 0;
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  6.15 Testimonial
 /*----------------------------------------*/
@@ -9507,7 +9587,6 @@ img {
   }
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  6.7 Faq
 /*----------------------------------------*/
@@ -9565,7 +9644,6 @@ img {
   margin-bottom: 22px;
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  6.3 Brand
 /*----------------------------------------*/
@@ -9621,7 +9699,6 @@ img {
   }
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  6.12 Process
 /*----------------------------------------*/
@@ -9738,7 +9815,6 @@ img {
   top: -40px;
 }
 
-/** @format */
 /*----------------------------------------*/
 /*  6.11 Pricing
 /*----------------------------------------*/
