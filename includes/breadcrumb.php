@@ -6,31 +6,23 @@
 function exdos_breadcrumb()
 {
     global $post;
-    $breadcrumb_class = '';
-    $breadcrumb_show = 1;
 
-    // Determine the title and class based on the page type
+    // Default title
+    $title = '';
+
+    // Determine the title based on the page type
     if (is_front_page() && is_home()) {
         $title = get_theme_mod('breadcrumb_blog_title', __('Blog', 'exdos'));
-        $breadcrumb_class = 'home_front_page';
-        $breadcrumb_show = 0;
     } elseif (is_front_page()) {
         $title = get_theme_mod('breadcrumb_blog_title', __('Blog', 'exdos'));
-        $breadcrumb_show = 0;
     } elseif (is_home()) {
         if (get_option('page_for_posts')) {
             $title = get_the_title(get_option('page_for_posts'));
         }
     } elseif (is_single()) {
-        if ('post' == get_post_type()) {
-            $title = get_the_title();
-        } elseif ('service' == get_post_type()) {
-            $title = get_the_title();
-        } elseif ('product' == get_post_type()) {
-            $title = get_theme_mod('breadcrumb_product_details', __('Shop', 'exdos'));
-        }
+        $title = get_the_title();
     } elseif (is_search()) {
-        $title = esc_html__('Search Results for : ', 'exdos') . get_search_query();
+        $title = esc_html__('Search Results for: ', 'exdos') . get_search_query();
     } elseif (is_404()) {
         $title = esc_html__('Page not Found', 'exdos');
     } elseif (is_archive()) {
@@ -51,16 +43,13 @@ function exdos_breadcrumb()
 
     // Get custom breadcrumb background image and switch
     $breadcrumb_bg_img = get_theme_mod('exdos_breadcrumb_image');
-    $breadcrumb_switch = function_exists('get_field') ? get_field('breacrumb_on_off', $_id) : null;
-
-
-    //$breadcrumb_switch = true;
+    $breadcrumb_switch = get_theme_mod('exdos_breadcrumb_switch', true); // Default to true
 
     // Render the breadcrumb section
     ?>
 <?php 
-if (!empty($breadcrumb_switch) && $breadcrumb_switch):
-     ?>
+if(!empty($breadcrumb_switch) && $breadcrumb_switch == 1): 
+    ?>
 <section class="tp-breadcrumb-area tp-breadcrumb-space p-relative"
     data-background="<?php echo esc_url($breadcrumb_bg_img); ?>" data-bg-color="#0A0E1A">
     <div class="tp-breadcrumb-shape">
@@ -83,8 +72,8 @@ if (!empty($breadcrumb_switch) && $breadcrumb_switch):
     </div>
 </section>
 <?php
- endif
- ; ?>
+endif;
+  ?>
 <?php
 }
 

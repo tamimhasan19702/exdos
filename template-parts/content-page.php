@@ -1,5 +1,6 @@
 <div class="tp-page-post">
 
+
     <?php 
 the_content();
 wp_link_pages([

@@ -343,6 +343,15 @@ function exdos_breadcrumb_section()
                 ]
             );
 
+            new \Kirki\Field\Toggle(
+                [
+                    'settings' => 'exdos_breadcrumb_switch',
+                    'label' => esc_html__('Breadcrumb Switch', 'kirki'),
+                    'section' => 'exdos_breadcrumb_section',
+                    'default' => 1,
+                ]
+            );
+
         }
     }
 }

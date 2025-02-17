@@ -11,6 +11,7 @@ $check_sidebar = is_active_sidebar('blog-sidebar') ? '' : 'justify-content-cente
 <main>
 
 
+
     <section class="tp-blogpost-area pt-130 pb-130">
         <div class="container">
             <div class="row <?php echo esc_attr($check_sidebar) ?>">
