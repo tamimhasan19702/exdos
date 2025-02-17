@@ -1,0 +1,5 @@
+sass --watch "C:\Users\Salim Rana\Dropbox\WebLearn-Course\exdos\assets\scss\main.scss":"C:\Users\Salim Rana\Dropbox\WebLearn-Course\exdos\assets\css\style.css"
+
+
+//harun//
+sass --watch "C:\Users\Admin\Dropbox\Harun Pure\exdos-html\assets\scss\main.scss":"C:\Users\Admin\Dropbox\Harun Pure\exdos-html\assets\css\style.css"
