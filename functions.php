@@ -22,6 +22,10 @@ include_once(get_template_directory() . '/includes/class_exdos_walker_nav_menu.p
 include_once(get_template_directory() . '/includes/sidebar-recent-post.php');
 include_once(get_template_directory() . '/includes/breadcrumb.php');
 
+if (class_exists('WooCommerce', false)) {
+    include_once(get_template_directory() . '/includes/woo-functions.php');
+}
+
 if (class_exists('Kirki')) {
     include_once(get_template_directory() . '/includes/kirki/kirki-header-functions.php');
     include_once(get_template_directory() . '/includes/kirki/kirki-footer-functions.php');

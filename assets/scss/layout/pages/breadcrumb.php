@@ -10,10 +10,11 @@ function exdos_breadcrumb()
     // Default title
     $title = '';
 
+    // Determine the title based on the page type
     if (is_front_page() && is_home()) {
-        return;
+        return; // Hide breadcrumb on homepage
     } elseif (is_front_page()) {
-        return;
+        return; // Hide breadcrumb on homepage
     } elseif (is_home()) {
         if (get_option('page_for_posts')) {
             $title = get_the_title(get_option('page_for_posts'));
@@ -25,18 +26,7 @@ function exdos_breadcrumb()
     } elseif (is_404()) {
         $title = esc_html__('Page not Found', 'exdos');
     } elseif (is_archive()) {
-        // Remove "Category:", "Tag:", "Archive:", etc. from archive titles
-        if (is_post_type_archive()) {
-            $title = post_type_archive_title('', false); // Gets clean post type name
-        } elseif (is_tax() || is_category() || is_tag()) {
-            $title = single_term_title('', false); // Gets term name without label
-        } elseif (is_author()) {
-            $title = get_the_author(); // Author display name
-        } elseif (is_date()) {
-            $title = get_the_date('F Y'); // Date format (e.g., "January 2023")
-        } else {
-            $title = get_the_archive_title();
-        }
+        $title = get_the_archive_title();
     } else {
         $title = get_the_title();
     }
