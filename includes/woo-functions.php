@@ -23,13 +23,17 @@ function exdos_product_grid() {
 
 <div class="tp-product-item mb-50">
     <div class="tp-product-thumb mb-15 fix p-relative z-index-1">
-        <a href="shop-details.html">
+        <a href="<?php the_permalink(); ?>">
             <?php the_post_thumbnail();?>
         </a>
 
+        <?php
+        $product = wc_get_product(get_the_ID());
+        if ($product->get_sale_price() > 0 && $product->get_sale_price() < $product->get_regular_price()) : ?>
         <div class="tp-product-badge">
             <span class="product-discount">SALE</span>
         </div>
+        <?php endif; ?>
 
         <!-- product action -->
         <div class="tp-product-action tp-product-action-blackStyle">
@@ -81,14 +85,28 @@ function exdos_product_grid() {
     </div>
     <div class="tp-product-content">
         <div class="tp-product-tag">
-            <span>Backpack, Wonder</span>
+            <?php 
+                $terms = get_the_terms( get_the_ID(), 'product_cat' );
+                if ( $terms && ! is_wp_error( $terms ) ) :
+                    echo '<span>' . join( ', ', wp_list_pluck( $terms, 'name' ) ) . '</span>';
+                endif;
+            ?>
         </div>
         <h3 class="tp-product-title">
-            <a href="shop-details.html">Simple Modern School Boys</a>
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
         </h3>
         <div class="tp-product-price-wrapper">
-            <span class="tp-product-price">$340.00</span>
-            <span class="tp-product-price old-price">$340.00</span>
+            <?php 
+            $sale_price = get_post_meta( get_the_ID(), '_sale_price', true );
+            if ( ! empty( $sale_price ) && $sale_price != 0 ) : ?>
+            <span class="tp-product-price"><?php echo wc_price( $sale_price ); ?></span>
+            <span
+                class="tp-product-price old-price"><?php echo wc_price( get_post_meta( get_the_ID(), '_regular_price', true ) ); ?></span>
+
+            <?php else : ?>
+            <span
+                class="tp-product-price"><?php echo wc_price( get_post_meta( get_the_ID(), '_regular_price', true ) ); ?></span>
+            <?php endif; ?>
         </div>
     </div>
 </div>
@@ -98,3 +116,13 @@ function exdos_product_grid() {
 }
 
 add_action('woocommerce_before_shop_loop_item', 'exdos_product_grid');
+
+
+
+function exdos_add_to_cart($args = array()) {
+    global $product;
+    
+
+    
+
+}
