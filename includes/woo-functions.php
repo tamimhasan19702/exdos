@@ -17,6 +17,67 @@ remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_pro
 remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
 
 
+
+
+function exdos_add_to_cart( $args = array() ) {
+    global $product;
+
+        if ( $product ) {
+            $defaults = array(
+                'quantity'   => 1,
+                'class'      => implode(
+                    ' ',
+                    array_filter(
+                        array(
+                            'tp-product-add-cart-btn-large text-center',
+                            'product_type_' . $product->get_type(),
+                            $product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
+                            $product->supports( 'ajax_add_to_cart' ) && $product->is_purchasable() && $product->is_in_stock() ? 'ajax_add_to_cart' : '',
+                        )
+                    )
+                ),
+                'attributes' => array(
+                    'data-product_id'  => $product->get_id(),
+                    'data-product_sku' => $product->get_sku(),
+                    'aria-label'       => $product->add_to_cart_description(),
+                    'rel'              => 'nofollow',
+                ),
+            );
+
+            $args = wp_parse_args( $args, $defaults );
+
+            if ( isset( $args['attributes']['aria-label'] ) ) {
+                $args['attributes']['aria-label'] = wp_strip_all_tags( $args['attributes']['aria-label'] );
+            }
+        }
+
+
+         // check product type 
+         if( $product->is_type( 'simple' ) ){
+            $btntext = esc_html__("Add to Cart",'exdos');
+         } elseif( $product->is_type( 'variable' ) ){
+            $btntext = esc_html__("Select Options",'exdos');
+         } elseif( $product->is_type( 'external' ) ){
+            $btntext = esc_html__("Buy Now",'exdos');
+         } elseif( $product->is_type( 'grouped' ) ){
+            $btntext = esc_html__("View Products",'exdos');
+         }
+         else{
+            $btntext = esc_html__("Add to Cart",'exdos');
+         } 
+
+        echo sprintf( '<a title="%s" href="%s" data-quantity="%s" class="%s" %s>%s</a>',
+            $btntext,
+            esc_url( $product->add_to_cart_url() ),
+            esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
+            esc_attr( isset( $args['class'] ) ? $args['class'] : 'tp-product-add-cart-btn-large' ),
+            isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
+            $btntext
+        );
+}
+
+
+
 function exdos_product_grid() {
     ?>
 
@@ -78,9 +139,7 @@ function exdos_product_grid() {
         </div>
 
         <div class="tp-product-add-cart-btn-large-wrapper">
-            <button type="button" class="tp-product-add-cart-btn-large">
-                Add To Cart
-            </button>
+            <?php exdos_add_to_cart(); ?>
         </div>
     </div>
     <div class="tp-product-content">
@@ -116,13 +175,3 @@ function exdos_product_grid() {
 }
 
 add_action('woocommerce_before_shop_loop_item', 'exdos_product_grid');
-
-
-
-function exdos_add_to_cart($args = array()) {
-    global $product;
-    
-
-    
-
-}
