@@ -181,37 +181,32 @@ add_action('woocommerce_before_shop_loop_item', 'exdos_product_grid');
 // single product details
 
 function exdos_single_product_details() {
+
+
+    global $product;
+   
+
     ?>
 
 
 
 <div class="tp-product-details-wrapper pb-50">
     <div class="tp-product-details-category">
-        <span>Computers & Tablets</span>
+        <span><?php the_terms( get_the_ID(), 'product_cat' ); ?></span>
     </div>
-    <h3 class="tp-product-details-title mb-20">Sulwhasoo Essential Cream</h3>
+    <h3 class="tp-product-details-title mb-20"><?php the_title(); ?></h3>
 
 
     <div class="tp-product-details-inventory mb-25 d-flex align-items-center justify-content-between">
 
         <div class="tp-product-details-price-wrapper">
-            <span class="tp-product-details-price">$1,260.00</span>
+            <span class="tp-product-details-price"><?php woocommerce_template_single_price(); ?></span>
             <div class="tp-product-details-rating-wrapper d-flex align-items-center">
-                <div class="tp-product-details-rating">
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                </div>
-                <div class="tp-product-details-reviews">
-                    <span>(36 Reviews)</span>
-                </div>
+                <?php woocommerce_template_single_rating();?>
             </div>
         </div>
     </div>
-    <p>A Screen Everyone Will Love: Whether your family is streaming or video chatting with friends tablet
-        A8... <span>See more</span></p>
+    <p><?php echo $product->get_short_description(); ?></p>
 
 
 

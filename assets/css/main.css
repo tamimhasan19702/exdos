@@ -605,6 +605,10 @@ img {
   padding: 0; /* Remove any padding */
 }
 
+.single-product .tp-shop-area {
+  background-color: #eff1f7;
+}
+
 /*----------------------------------------*/
 /*  1.3 Default Spacing
 /*----------------------------------------*/
