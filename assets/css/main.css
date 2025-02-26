@@ -10862,6 +10862,15 @@ img {
   background-color: var(--tp-theme-color) !important;
 }
 
+.single-product .tp-product-add-cart-btn-large {
+  color: var(--tp-white) !important;
+  background-color: var(--tp-theme-color) !important;
+}
+.single-product .tp-product-add-cart-btn-large:hover {
+  color: var(--tp-white) !important;
+  background-color: var(--tp-common-black) !important;
+}
+
 /*----------------------------------------*/
 /*  6.3 cart
 /*----------------------------------------*/

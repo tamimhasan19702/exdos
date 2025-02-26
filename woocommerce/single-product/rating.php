@@ -16,12 +16,12 @@ $average      = $product->get_average_rating();
 
 <div class="tp-product-details-rating">
     <?php
-    // Display 5 stars, filled based on the average rating
+    // Always display 5 stars, filled based on the average rating
     for ($i = 1; $i <= 5; $i++) {
         if ($i <= $average) {
             echo '<span><i class="fas fa-star" style="color: #ffc107;"></i></span>'; // Full star (rated)
         } else {
-            echo '<span><i class="fas fa-star-o" style="color: #ccc;"></i></span>'; // Empty star (unrated)
+            echo '<span><i class="fas fa-star" style="color: #ccc;"></i></span>'; // Empty star (unrated)
         }
     }
     ?>
