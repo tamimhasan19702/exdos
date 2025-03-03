@@ -245,3 +245,20 @@ img {
 .container-1230 {
   max-width: 1230px;
 }
+
+.tp-product-quantity {
+  display: flex;
+  align-items: center; /* Vertically center */
+  justify-content: center; /* Horizontally center */
+  gap: 10px;
+}
+
+.tp-cart-input {
+  width: 50px; /* Set a fixed width */
+  text-align: center; /* Center text inside the input */
+}
+
+.tp-cart-minus,
+.tp-cart-plus {
+  margin: 0 5px; /* Space between buttons and input */
+}
