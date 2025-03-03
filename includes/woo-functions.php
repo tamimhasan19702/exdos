@@ -25,6 +25,8 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50);
+remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20);
+
 
 
 // quick view and wishlist, compare
@@ -214,7 +216,9 @@ function exdos_single_product_details() {
         <h3 class="tp-product-details-action-title">Quantity</h3>
         <div class="tp-product-details-action-item-wrapper d-flex flex-wrap align-items-center">
 
-            <div class="tp-product-details-quantity">
+            <?php woocommerce_template_single_add_to_cart();?>
+
+            <!-- <div class="tp-product-details-quantity">
                 <div class="tp-product-quantity mb-15 mr-15">
                     <span class="tp-cart-minus" onclick="changeQuantity(-1)">
                         <svg width="11" height="2" viewBox="0 0 11 2" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -243,34 +247,15 @@ function exdos_single_product_details() {
                         <?php echo esc_html__('Add to cart', 'exdos'); ?>
                     </button>
                 </form>
-            </div>
-
-            <script>
-            function changeQuantity(amount) {
-                const input = document.getElementById('quantity-input');
-                let currentValue = parseInt(input.value);
-                currentValue += amount;
-                if (currentValue < 1) currentValue = 1; // Prevent negative or zero quantity
-                input.value = currentValue;
-            }
-
-            function updateHiddenQuantity() {
-                const quantity = document.getElementById('quantity-input').value;
-                document.getElementById('hidden-quantity').value = quantity; // Update hidden input with the quantity
-            }
-            </script>
+            </div> -->
 
 
-            <div class="tp-product-details-wishlist mb-15">
-                <div class="tp-product-action-btn tp-product-add-to-wishlist-btn">
-                    <?php echo do_shortcode('[woosw id="' . get_the_ID() . '"]')?>
-                    <span class="tp-product-tooltip">Add To Wishlist</span>
-                </div>
-            </div>
         </div>
     </div>
 
+
     <div class="tp-product-details-query">
+
         <?php if( $product->get_sku()  ): ?>
         <div class="tp-product-details-query-item d-flex align-items-center">
             <span><?php esc_html_e( 'SKU: ', 'exdos' ); ?></span>
@@ -290,6 +275,11 @@ function exdos_single_product_details() {
         </div>
         <?php endif; ?>
     </div>
+
+
+
+
+
     <div class="tp-product-details-social">
 
         <?php
@@ -324,3 +314,107 @@ function exdos_single_product_details() {
 }
 
 add_action('woocommerce_single_product_summary', 'exdos_single_product_details');
+
+
+function exdos_product_images() {
+    global $product;
+
+    if (!is_a($product, 'WC_Product')) {
+        return;
+    }
+
+    $featured_image_id = $product->get_image_id();
+    $gallery_image_ids = $product->get_gallery_image_ids();
+
+    $image_ids = [];
+
+    if ($featured_image_id) {
+        $image_ids[] = $featured_image_id;
+    }
+
+    if (!empty($gallery_image_ids)) {
+        $image_ids = array_merge($image_ids, $gallery_image_ids);
+    }
+
+    if (empty($image_ids)) {
+        return;
+    }
+
+    ?>
+<div class="tp-product-details-thumb-wrapper tp-tab pb-50">
+    <div class="tab-content m-img" id="productDetailsNavContent">
+        <?php foreach ($image_ids as $index => $image_id) : 
+                $i = $index + 1;
+                $active_class = $i === 1 ? 'show active' : '';
+                $image_url = wp_get_attachment_image_url($image_id, 'full');
+                $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true) ?: get_the_title($product->get_id());
+                ?>
+        <div class="tab-pane fade <?php echo $active_class; ?>" id="nav-<?php echo $i; ?>" role="tabpanel"
+            aria-labelledby="nav-<?php echo $i; ?>-tab" tabindex="0">
+            <div class="tp-product-details-nav-main-thumb">
+                <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($alt_text); ?>">
+            </div>
+        </div>
+        <?php endforeach; ?>
+    </div>
+
+    <nav>
+        <div class="nav nav-tabs" id="productDetailsNavThumb" role="tablist">
+            <?php foreach ($image_ids as $index => $image_id) : 
+                    $i = $index + 1;
+                    $active_class = $i === 1 ? 'active' : '';
+                    $thumb_url = wp_get_attachment_image_url($image_id, 'woocommerce_thumbnail');
+                    $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true) ?: get_the_title($product->get_id());
+                    ?>
+            <button class="nav-link <?php echo $active_class; ?>" id="nav-<?php echo $i; ?>-tab" data-bs-toggle="tab"
+                data-bs-target="#nav-<?php echo $i; ?>" type="button" role="tab" aria-controls="nav-<?php echo $i; ?>"
+                aria-selected="<?php echo $i === 1 ? 'true' : 'false'; ?>">
+                <img src="<?php echo esc_url($thumb_url); ?>" alt="<?php echo esc_attr($alt_text); ?>">
+            </button>
+            <?php endforeach; ?>
+        </div>
+    </nav>
+</div>
+<?php
+}
+
+
+add_action('woocommerce_before_single_product_summary', 'exdos_product_images');
+
+
+function exdos_quantity_script() {
+    ?>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    function changeQuantity(amount) {
+        const input = document.getElementById('quantity-input');
+        let currentValue = parseInt(input.value);
+        currentValue += amount;
+        if (currentValue < 1) currentValue = 1; // Prevent negative or zero quantity
+        input.value = currentValue;
+        updateHiddenQuantity(); // Ensure hidden field is updated
+    }
+
+    function updateHiddenQuantity() {
+        const quantity = document.getElementById('quantity-input').value;
+        document.getElementById('hidden-quantity').value = quantity; // Update hidden input with the quantity
+    }
+
+    // Add event listeners for quantity change buttons
+    const minusBtn = document.querySelector('.tp-cart-minus');
+    const plusBtn = document.querySelector('.tp-cart-plus');
+
+    if (minusBtn && plusBtn) {
+        minusBtn.addEventListener('click', function() {
+            changeQuantity(-1);
+        });
+        plusBtn.addEventListener('click', function() {
+            changeQuantity(1);
+        });
+    }
+});
+</script>
+<?php
+}
+
+add_action('wp_footer', 'exdos_quantity_script');

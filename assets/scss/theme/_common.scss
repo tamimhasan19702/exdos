@@ -246,19 +246,14 @@ img {
   max-width: 1230px;
 }
 
-.tp-product-quantity {
-  display: flex;
-  align-items: center; /* Vertically center */
-  justify-content: center; /* Horizontally center */
-  gap: 10px;
+.woocommerce div.product div.images .flex-control-thumbs li {
+  padding: 0 5px;
+  display: grid;
 }
 
-.tp-cart-input {
-  width: 50px; /* Set a fixed width */
-  text-align: center; /* Center text inside the input */
-}
-
-.tp-cart-minus,
-.tp-cart-plus {
-  margin: 0 5px; /* Space between buttons and input */
+.woocommerce div.product div.images .flex-control-thumbs {
+  overflow: hidden;
+  zoom: 1;
+  margin: 0 -5px;
+  padding: 0;
 }

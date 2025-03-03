@@ -25,8 +25,7 @@ if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 }
 ?>
 <div <?php wc_product_class( 'exdos-col', $product ); ?>>
-
-    <?php
+	<?php
 	/**
 	 * Hook: woocommerce_before_shop_loop_item.
 	 *

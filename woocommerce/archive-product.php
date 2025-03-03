@@ -19,7 +19,6 @@ defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' );
 
-
 /**
  * Hook: woocommerce_before_main_content.
  *
@@ -38,27 +37,24 @@ do_action( 'woocommerce_before_main_content' );
  */
 do_action( 'woocommerce_shop_loop_header' );
 
-
-
-
 ?>
 
 <div class="tp-shop-top">
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="tp-shop-top-left mb-25 mt-10">
-                <?php woocommerce_result_count();?>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="tp-product-top-select d-flex justify-content-end mb-30">
-                <?php woocommerce_catalog_ordering();?>
-            </div>
-        </div>
-    </div>
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="tp-shop-top-left mb-25 mt-10">
+				<?php woocommerce_result_count(); ?>	
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="tp-product-top-select d-flex justify-content-end mb-30">
+				<?php woocommerce_catalog_ordering(); ?>
+			</div>
+		</div>
+	</div>
 </div>
+<?php
 
-<?php 
 
 
 
@@ -71,13 +67,9 @@ if ( woocommerce_product_loop() ) {
 	 * @hooked woocommerce_result_count - 20
 	 * @hooked woocommerce_catalog_ordering - 30
 	 */
-
-
-
 	do_action( 'woocommerce_before_shop_loop' );
 
 	woocommerce_product_loop_start();
-	
 
 	if ( wc_get_loop_prop( 'total' ) ) {
 		while ( have_posts() ) {
@@ -87,7 +79,6 @@ if ( woocommerce_product_loop() ) {
 			 * Hook: woocommerce_shop_loop.
 			 */
 			do_action( 'woocommerce_shop_loop' );
-			
 
 			wc_get_template_part( 'content', 'product' );
 		}
