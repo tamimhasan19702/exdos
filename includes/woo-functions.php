@@ -225,38 +225,6 @@ function exdos_single_product_details() {
 
             <?php woocommerce_template_single_add_to_cart();?>
 
-            <!-- <div class="tp-product-details-quantity">
-                <div class="tp-product-quantity mb-15 mr-15">
-                    <span class="tp-cart-minus" onclick="changeQuantity(-1)">
-                        <svg width="11" height="2" viewBox="0 0 11 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 1H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </span>
-                    <input class="tp-cart-input" type="number" value="1" min="1" id="quantity-input" name="quantity">
-                    <span class="tp-cart-plus" onclick="changeQuantity(1)">
-                        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 6H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            <path d="M5.5 10.5V1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </span>
-                </div>
-            </div>
-
-            <div class="tp-product-details-add-to-cart mb-15 mr-10">
-                <form method="post" action="<?php echo esc_url( wc_get_cart_url() ); ?>">
-                    <input type="hidden" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>">
-                    <input type="hidden" name="quantity" id="hidden-quantity" value="1">
-                    <button type="submit" class="button alt tp-product-details-add-to-cart-btn w-100"
-                        onclick="updateHiddenQuantity()">
-                        <?php echo esc_html__('Add to cart', 'exdos'); ?>
-                    </button>
-                </form>
-            </div> -->
-
-
         </div>
     </div>
 
@@ -417,6 +385,40 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         plusBtn.addEventListener('click', function() {
             changeQuantity(1);
+        });
+    }
+});
+
+
+// group product quantity
+
+document.addEventListener('DOMContentLoaded', function() {
+    function handleQuantityChange(button, change) {
+        const quantityDiv = button.closest('.quantity'); // Find the closest quantity div
+        const input = quantityDiv.querySelector('input.qty'); // Select the input field
+        let currentValue = parseInt(input.value) || 0; // Get the current value or default to 0
+        currentValue += change; // Update the value based on button clicked
+
+        // Set minimum value to 0
+        if (currentValue < 0) currentValue = 0;
+
+        // Update the input value
+        input.value = currentValue;
+        input.dispatchEvent(new Event('change', {
+            bubbles: true
+        })); // Trigger change event
+    }
+
+    // Attach event listeners to all minus and plus buttons
+    const groupedTable = document.querySelector('.woocommerce-grouped-product-list');
+    if (groupedTable) {
+        groupedTable.querySelectorAll('.minus, .plus').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default button behavior
+                const isMinus = this.classList.contains(
+                    'minus'); // Check if it's a minus button
+                handleQuantityChange(this, isMinus ? -1 : 1); // Call the function with -1 or +1
+            });
         });
     }
 });

@@ -637,6 +637,26 @@ img {
   color: var(--tp-theme-color-2) !important;
 }
 
+.tp-pro-details table.variations {
+  margin: 20px 0px !important;
+}
+
+.tp-pro-details table.variations tr {
+  margin: 10px 0px !important;
+  padding: 20px;
+}
+
+.tp-pro-details table.variations tr td select {
+  padding: 10px !important;
+  border: 1px solid #ddd !important;
+  border-radius: 5px !important;
+  font-size: 14px !important;
+}
+
+.tp-pro-details table.variations tr th label {
+  margin-right: 20px !important;
+}
+
 /*----------------------------------------*/
 /*  1.3 Default Spacing
 /*----------------------------------------*/
