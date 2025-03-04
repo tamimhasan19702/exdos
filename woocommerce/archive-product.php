@@ -40,18 +40,22 @@ do_action( 'woocommerce_shop_loop_header' );
 ?>
 
 <div class="tp-shop-top">
-	<div class="row">
-		<div class="col-sm-6">
-			<div class="tp-shop-top-left mb-25 mt-10">
-				<?php woocommerce_result_count(); ?>	
-			</div>
-		</div>
-		<div class="col-sm-6">
-			<div class="tp-product-top-select d-flex justify-content-end mb-30">
-				<?php woocommerce_catalog_ordering(); ?>
-			</div>
-		</div>
-	</div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="tp-shop-top-left mb-25 mt-10">
+                <?php 
+				woocommerce_result_count();
+				 ?>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="tp-product-top-select d-flex justify-content-end mb-30">
+                <?php 
+				woocommerce_catalog_ordering();
+				?>
+            </div>
+        </div>
+    </div>
 </div>
 <?php
 

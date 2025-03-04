@@ -36,6 +36,13 @@ add_filter('woosq_button_position', '__return_false');
 add_filter('woosw_button_position_single', '__return_false');
 add_filter('woosw_button_position_archive', '__return_false');
 
+
+
+// woocommerce sorting
+
+
+
+
 // add to cart
 function exdos_add_to_cart( $args = array() ) {
     global $product;
