@@ -13,7 +13,7 @@ global $product;
 
 if (!empty($product_tabs)) : ?>
 
-<div class="tp-product-details-tab-nav tp-tab">
+<div class="tp-product-details-tab-nav tp-tab mb-50">
     <nav>
         <div class="nav nav-tabs p-relative tp-product-tab justify-content-sm-start justify-content-center" id="nav-tab"
             role="tablist">
@@ -116,37 +116,76 @@ if (!empty($product_tabs)) : ?>
                     <div class="col-lg-12">
                         <div class="tp-product-details-review-form pt-55">
                             <?php
-        // Arguments for the comment form
-        $args = array(
-            'title_reply' => __('Add a Review', 'woocommerce'),
-            'title_reply_to' => '',
-            'title_reply_before' => '<h3 class="tp-product-details-review-form-title">',
-            'title_reply_after' => '</h3>',
-            'comment_notes_before' => '<p>' . esc_html__('Your email address will not be published. Required fields are marked *', 'woocommerce') . '</p>',
-            'logged_in_as' => '',
-            'comment_field' => '',
-            'fields' => array(),
-            'label_submit' => __('Submit Review', 'woocommerce'),
-            'class_submit' => 'tp-btn',
-            'submit_button' => '<button type="submit" name="%1$s" id="%2$s" class="%3$s"><span class="tp-btn-wrap"><span class="tp-btn-y-1">%4$s</span><span class="tp-btn-y-2">%4$s</span></span><i></i></button>'
-        );
+        // Check if the user is logged in
+        if ( is_user_logged_in() ) {
+            // If the user is logged in, use the default comment form
+            $args = array(
+                'title_reply' => __('Add a Review', 'woocommerce'),
+                'title_reply_to' => '',
+                'title_reply_before' => '<h3 class="tp-product-details-review-form-title">',
+                'title_reply_after' => '</h3>',
+                'comment_notes_before' => '<p>' . esc_html__('Your email address will not be published. Required fields are marked *', 'woocommerce') . '</p>',
+                'logged_in_as' => '',
+                'comment_field' => '',
+                'fields' => array(),
+                'label_submit' => __('Submit Review', 'woocommerce'),
+                'class_submit' => 'tp-btn',
+                'submit_button' => '<button type="submit" name="%1$s" id="%2$s" class="%3$s"><span class="tp-btn-wrap"><span class="tp-btn-y-1">%4$s</span><span class="tp-btn-y-2">%4$s</span></span><i></i></button>'
+            );
 
-        // Add star rating selection
-        $args['comment_field'] = '
-            <div class="tp-product-details-review-form-rating d-flex align-items-center mb-30">
-                <p>' . esc_html__('Your Rating:', 'woocommerce') . '</p>
-                <div class="tp-product-details-review-form-rating-icon d-flex align-items-center" id="star-rating">
-                    <input type="hidden" name="rating" id="rating" value="" required />
-                </div>
-            </div>';
+            // Add star rating selection
+            $args['comment_field'] = '
+                <div class="tp-product-details-review-form-rating d-flex align-items-center mb-30">
+                    <p>' . esc_html__('Your Rating:', 'woocommerce') . '</p>
+                    <div class="tp-product-details-review-form-rating-icon d-flex align-items-center" id="star-rating">
+                        <span class="star" data-value="1"><i class="fas fa-star"></i></span>
+                        <span class="star" data-value="2"><i class="fas fa-star"></i></span>
+                        <span class="star" data-value="3"><i class="fas fa-star"></i></span>
+                        <span class="star" data-value="4"><i class="fas fa-star"></i></span>
+                        <span class="star" data-value="5"><i class="fas fa-star"></i></span>
+                        <input type="hidden" name="rating" id="rating" value="" required />
+                    </div>
+                </div>';
 
-      
+            // Add the comment textarea
+            $args['comment_field'] .= '<div class="col-md-12 mb-45"><textarea name="comment" cols="30" rows="10" placeholder="' . esc_attr__('Your Review *', 'woocommerce') . '" required></textarea></div>';
 
-        // Add the comment textarea
-        $args['comment_field'] .= '<div class="col-md-12 mb-45"><textarea name="comment" cols="30" rows="10" placeholder="' . esc_attr__('Your Review *', 'woocommerce') . '" required></textarea></div>';
+            // Display the comment form
+            comment_form(apply_filters('woocommerce_product_review_comment_form_args', $args));
+        } else {
+            // If the user is not logged in, show name and email fields
+            ?>
+                            <h3 class="tp-product-details-review-form-title"><?php _e('Add a Review', 'woocommerce'); ?>
+                            </h3>
+                            <p><?php esc_html_e('Your email address will not be published. Required fields are marked *', 'woocommerce'); ?>
+                            </p>
+                            <div class="tp-product-details-review-form-rating d-flex align-items-center mb-30">
+                                <p><?php esc_html_e('Your Rating:', 'woocommerce'); ?></p>
+                                <div class="tp-product-details-review-form-rating-icon d-flex align-items-center"
+                                    id="star-rating">
 
-        // Display the comment form
-        comment_form(apply_filters('woocommerce_product_review_comment_form_args', $args));
+                                    <input type="hidden" name="rating" id="rating" value="" required />
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 mb-30">
+                                <input name="author" type="text"
+                                    placeholder="<?php esc_attr_e('Your Name *', 'woocommerce'); ?>" required />
+                            </div>
+                            <div class="col-md-12 mb-30">
+                                <input name="email" type="email"
+                                    placeholder="<?php esc_attr_e('Your Email *', 'woocommerce'); ?>" required />
+                            </div>
+
+                            <div class="col-md-12 mb-45">
+                                <textarea name="comment" cols="30" rows="10"
+                                    placeholder="<?php esc_attr_e('Your Review *', 'woocommerce'); ?>"
+                                    required></textarea>
+                            </div>
+                            <button type="submit"
+                                class="tp-btn"><?php esc_html_e('Submit Review', 'woocommerce'); ?></button>
+                            <?php
+        }
         ?>
                         </div>
                     </div>
@@ -154,12 +193,10 @@ if (!empty($product_tabs)) : ?>
                     <script>
                     document.addEventListener('DOMContentLoaded', function() {
                         const stars = document.querySelectorAll('#star-rating .star');
-                        const ratingInput = document.getElementById('rating');
 
                         stars.forEach(star => {
                             star.addEventListener('click', function() {
                                 const value = this.getAttribute('data-value');
-                                ratingInput.value = value;
 
                                 // Remove active class from all stars
                                 stars.forEach(s => s.classList.remove('active'));
