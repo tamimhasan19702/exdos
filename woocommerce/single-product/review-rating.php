@@ -23,5 +23,13 @@ global $comment;
 $rating = intval( get_comment_meta( $comment->comment_ID, 'rating', true ) );
 
 if ( $rating && wc_review_ratings_enabled() ) {
-	echo wc_get_rating_html( $rating ); // WPCS: XSS ok.
+    // Display stars based on the rating
+    for ( $i = 1; $i <= 5; $i++ ) {
+        if ( $i <= $rating ) {
+            echo '<span><i class="fas fa-star" style="color: #ffc107;"></i></span>'; // Full star (rated)
+        } else {
+            echo '<span><i class="fas fa-star" style="color: #ccc;"></i></span>'; // Empty star (unrated)
+        }
+    }
 }
+?>
