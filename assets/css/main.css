@@ -657,6 +657,47 @@ img {
   margin-right: 20px !important;
 }
 
+.woocommerce .cart-collaterals .cart_totals,
+.woocommerce-page .cart-collaterals .cart_totals {
+  width: 100% !important;
+}
+
+.woocommerce table.shop_table td {
+  width: 300px !important;
+}
+
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit.alt,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button.alt,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button.alt,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button.alt,
+:where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce #respond input#submit.alt,
+:where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce a.button.alt,
+:where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce button.button.alt,
+:where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce input.button.alt {
+  width: 100% !important;
+  text-align: center !important;
+  padding: 20px 30px !important;
+  background-color: #0057fc !important;
+}
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit.alt:hover,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button.alt:hover,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button.alt:hover,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button.alt:hover,
+:where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce #respond input#submit.alt:hover,
+:where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce a.button.alt:hover,
+:where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce button.button.alt:hover,
+:where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce input.button.alt:hover {
+  background-color: #000000 !important;
+}
+
+.woocommerce a.remove {
+  color: #000000 !important;
+}
+.woocommerce a.remove:hover {
+  color: #ffffff !important;
+  background-color: #0057fc !important;
+}
+
 /*----------------------------------------*/
 /*  1.3 Default Spacing
 /*----------------------------------------*/

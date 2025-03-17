@@ -427,3 +427,16 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 add_action('wp_footer', 'exdos_quantity_script');
+
+
+
+function enqueue_custom_quantity_script() {
+    wp_enqueue_script(
+        'custom-quantity',
+        get_template_directory_uri() . '/assets/js/custom-quantity.js',
+        array('jquery'),
+        '1.0',
+        true
+    );
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_quantity_script');
