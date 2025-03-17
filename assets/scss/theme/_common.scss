@@ -347,3 +347,38 @@ img {
     background-color: #0057fc !important;
   }
 }
+
+.woocommerce #content table.cart td.actions .input-text,
+.woocommerce table.cart td.actions .input-text,
+.woocommerce-page #content table.cart td.actions .input-text,
+.woocommerce-page table.cart td.actions .input-text {
+  width: 100% !important;
+}
+
+.woocommerce #content table.cart td.actions .coupon,
+.woocommerce table.cart td.actions .coupon,
+.woocommerce-page #content table.cart td.actions .coupon,
+.woocommerce-page table.cart td.actions .coupon {
+  display: flex;
+  flex-direction: row;
+}
+
+.exdos_apply_coupon {
+  width: 100% !important;
+  color: #ffffff !important;
+  background: #000000 !important;
+
+  &:hover {
+    background: #1b1b1b !important;
+  }
+}
+
+.exdos_update_cart {
+  padding: 20px 30px !important;
+  color: #ffffff !important;
+  background: #000000 !important;
+
+  &:hover {
+    background: #1b1b1b !important;
+  }
+}

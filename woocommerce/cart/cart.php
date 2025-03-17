@@ -189,7 +189,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                                 <input type="text" name="coupon_code" class="input-text" id="coupon_code" value=""
                                     placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <button
                                     type="submit"
-                                    class="button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>"
+                                    class="exdos_apply_coupon button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>"
                                     name="apply_coupon"
                                     value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_html_e( 'Apply coupon', 'woocommerce' ); ?></button>
                                 <?php do_action( 'woocommerce_cart_coupon' ); ?>
@@ -197,7 +197,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                             <?php } ?>
 
                             <button type="submit"
-                                class="button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>"
+                                class="exdos_update_cart button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>"
                                 name="update_cart"
                                 value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
 
