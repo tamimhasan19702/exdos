@@ -21,6 +21,8 @@ include_once(get_template_directory() . '/includes/theme-functionality.php');
 include_once(get_template_directory() . '/includes/class_exdos_walker_nav_menu.php');
 include_once(get_template_directory() . '/includes/sidebar-recent-post.php');
 include_once(get_template_directory() . '/includes/breadcrumb.php');
+include_once(get_template_directory() . '/includes/add_plugin.php');
+include_once(get_template_directory() . '/includes/class-tgm-plugin-activation.php');
 
 if (class_exists('WooCommerce', false)) {
     include_once(get_template_directory() . '/includes/woo-functions.php');
