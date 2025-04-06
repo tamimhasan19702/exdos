@@ -412,3 +412,43 @@ if (function_exists('acf_add_local_field_group')) {
         'description' => '',
     ));
 }
+
+
+function exdos_headers(){
+    $header_variation = function_exists('get_field') ? get_field('header_variation') : '';
+
+    $header_variation_kirki = get_theme_mod('exdos_header_variation', 'header_1');
+
+    if($header_variation == 'header_1'){
+        get_template_part('template-parts/header/header-1');
+    }elseif($header_variation == 'header_2'){
+        get_template_part('template-parts/header/header-2');
+    }else{
+        if($header_variation_kirki == 'header_1'){
+            get_template_part('template-parts/header/header-1');
+        }elseif($header_variation_kirki == 'header_2'){
+            get_template_part('template-parts/header/header-2');
+        }
+    }
+
+}
+
+
+function exdos_footers(){
+    $footer_variation = function_exists('get_field') ? get_field('footer_variation') : '';
+
+    $footer_variation_kirki = get_theme_mod('exdos_footer_variation', 'footer_1');
+
+    if($footer_variation == 'footer_1'){
+        get_template_part('template-parts/footer/footer-1');
+    }elseif($footer_variation == 'footer_2'){
+        get_template_part('template-parts/footer/footer-2');
+    }else{
+        if($footer_variation_kirki == 'footer_1'){
+            get_template_part('template-parts/footer/footer-1');
+        }elseif($footer_variation_kirki == 'footer_2'){
+            get_template_part('template-parts/footer/footer-2');
+        }
+    }
+
+}

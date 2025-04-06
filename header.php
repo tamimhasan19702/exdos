@@ -15,17 +15,4 @@
     <!-- scroll to top  -->
     <button id="back-to-top"><i class="far fa-arrow-up"></i></button>
 
-    <!-- preloader  -->
-    <?php get_template_part('template-parts/header/preloader'); ?>
-
-
-    <!-- header start  -->
-    <?php get_template_part('template-parts/header/header-part'); ?>
-    <!-- header end  -->
-
-    <!-- tp header search  -->
-    <?php get_template_part('template-parts/header/tp-header-search'); ?>
-
-    <!-- tp-offcanvas  -->
-
-    <?php get_template_part('template-parts/header/tp-offcanvas'); ?>
+    <?php exdos_headers(); ?>

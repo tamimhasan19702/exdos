@@ -16,6 +16,76 @@ function kirki_panels()
 
 kirki_panels();
 
+
+function exdos_header_variation()
+{
+    if (class_exists('Kirki\Section')) {
+        new \Kirki\Section(
+            'exdos_header_variation',
+            [
+                'title' => esc_html__('Exdos Header Variation', 'kirki'),
+                'description' => esc_html__('Exdos Header Variation Description', 'kirki'),
+                'panel' => 'exdos_kirki_panel',
+                'priority' => 160,
+            ]
+        );
+
+        if (class_exists('Kirki\Field')) {
+
+            new \Kirki\Field\Select(
+                [
+                    'settings' => 'exdos_header_variation',
+                    'label' => esc_html__('Exdos Header Variation', 'kirki'),
+                    'section' => 'exdos_header_variation',
+                    'default' => 'header_1',
+                    'priority' => 10,
+                    'choices' => [
+                        'header_1' => esc_html__('Header 1', 'kirki'),
+                        'header_2' => esc_html__('Header 2', 'kirki'),
+                    ],
+                ]
+            );
+
+        }
+    }
+}
+
+function exdos_footer_variation()
+{
+    if (class_exists('Kirki\Section')) {
+        new \Kirki\Section(
+            'exdos_footer_variation',
+            [
+                'title' => esc_html__('Exdos Footer Variation', 'kirki'),
+                'description' => esc_html__('Exdos Footer Variation Description', 'kirki'),
+                'panel' => 'exdos_kirki_panel',
+                'priority' => 160,
+            ]
+        );
+
+        if (class_exists('Kirki\Field')) {
+
+            new \Kirki\Field\Select(
+                [
+                    'settings' => 'exdos_footer_variation',
+                    'label' => esc_html__('Exdos Footer Variation', 'kirki'),
+                    'section' => 'exdos_footer_variation',
+                    'default' => 'footer_1',
+                    'priority' => 10,
+                    'choices' => [
+                        'footer_1' => esc_html__('Footer 1', 'kirki'),
+                        'footer_2' => esc_html__('Footer 2', 'kirki'),
+                    ],
+                ]
+            );
+
+        }
+    }
+}
+
+exdos_header_variation();
+
+
 function exdos_header_section()
 {
     if (class_exists('Kirki\Section')) {
