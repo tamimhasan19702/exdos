@@ -1,7 +1,7 @@
 <!-- footer start  -->
 <footer class="tp-theme-black-bg p-relative">
 
-    <?php get_template_part('template-parts/footer/footer-1'); ?>
+    <?php exdos_footers(); ?>
 </footer>
 <!-- footer end  -->
 

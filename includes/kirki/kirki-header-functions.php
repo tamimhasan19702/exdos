@@ -84,6 +84,7 @@ function exdos_footer_variation()
 }
 
 exdos_header_variation();
+exdos_footer_variation();
 
 
 function exdos_header_section()
